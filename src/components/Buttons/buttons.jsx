@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "./buttonStyle";
 
-const Btn = ({ type, width, background, children, mt, mr, mb, ml }) => {
+const Btn = ({ type, width, background, children, mt, mr, mb, ml, pl, pr }) => {
   return (
     <Button
       type={type}
