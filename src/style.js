@@ -8,13 +8,16 @@ export const LogoLink = styled(Link)`
   align-items: center;
   h3 {
     margin-left: 10px;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 900;
   }
 `;
 export const Header = styled.div`
   background-color: var(--headerColor);
   justify-content: center;
   display: flex;
-  /* height: 64px; */
   div {
     display: flex;
     justify-content: space-between;
@@ -72,4 +75,28 @@ export const SearchInput = styled.input`
   border: none;
   outline: none;
   width: 100%;
+`;
+export const Advanced = styled.div``;
+Advanced.Title = styled.div`
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--headerColor);
+  text-transform: capitalize;
+`;
+export const AdvancedInputs = styled.div`
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  column-gap: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+`;
+export const AdvancedTrigger = styled.div`
+  background-color: #f6f8f9;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 65%;
 `;

@@ -1,6 +1,6 @@
 import React from "react";
-import { Navbar } from "./Navbar/Navbar";
-import { NavbarDetails } from "../utils/NavbarDetails";
+import { Navbar } from "./components/Navbar/Navbar";
+import { NavbarDetails } from "./utils/Details";
 import { Route, Routes } from "react-router-dom";
 
 export default function App() {

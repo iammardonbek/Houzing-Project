@@ -1,14 +1,14 @@
 import React from "react";
+import Recommended from "../Recommended/Recommended";
 import { Search } from "../SearchBar/Search";
-import { useLocation } from "react-router-dom";
+import { Slider } from "../Slider/Slider";
 
 export function Home() {
-  var location = useLocation();
   return (
     <div>
       <Search />
-
-      <h1>Home{location.pathname}</h1>
+      <Slider />
+      <Recommended />
     </div>
   );
 }

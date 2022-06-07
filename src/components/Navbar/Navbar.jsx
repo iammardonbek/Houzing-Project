@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { Header, Nav, LogoLink } from "../../style";
-import { NavbarDetails } from "../../utils/NavbarDetails";
+import { NavbarDetails } from "../../utils/Details";
 import Logo from "../../Assets/logo.svg";
 import Button from "../Buttons/buttons";
 

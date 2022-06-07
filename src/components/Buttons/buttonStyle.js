@@ -14,6 +14,12 @@ const ButtonType = ({ type }) => {
         color: "#0d263b",
         background: "white",
       };
+    case "cancel":
+      return {
+        background: "transparent",
+        color: "0d263b",
+        border: "1px solid #E6E9EC",
+      };
     default:
       return {
         border: "1px solid #E6E9EC",
@@ -33,13 +39,16 @@ export const Button = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center;
   border-radius: 2px;
   height: 44px;
   font-style: normal;
   font-weight: 400;
   text-transform: capitalize;
-
+  padding: 12px 16px;
   font-size: 14px;
   line-height: 20px;
+  :active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  }
 `;

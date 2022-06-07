@@ -1,17 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.083904cf.css",
-    "main.js": "/static/js/main.dce0d494.js",
+    "main.css": "/static/css/main.a9163b3b.css",
+    "main.js": "/static/js/main.d8837765.js",
+    "static/media/unsplash.png": "/static/media/unsplash.2954e87b2992d13622a8.png",
+    "static/media/unsplash1.png": "/static/media/unsplash1.1e5f186ddee48f451ddd.png",
+    "static/media/unsplash2.png": "/static/media/unsplash2.fc7b5fd03b0069da610e.png",
+    "static/media/car.svg": "/static/media/car.0f5334032823e004d84b8445a5ca7c80.svg",
     "static/media/setting-lines.svg": "/static/media/setting-lines.3dfc459675c5ef7e343ec8aa7a41e60d.svg",
+    "static/media/beds.svg": "/static/media/beds.9f1b9f3e18ad6259dc1cb1c67b39bc14.svg",
+    "static/media/baths.svg": "/static/media/baths.be63664e6231d471b5ed7897280d3d59.svg",
     "static/media/homeInSearch.svg": "/static/media/homeInSearch.a286fbb28ca13fbe6918c6978c7a054c.svg",
+    "static/media/field.svg": "/static/media/field.de9438ac4fa0d9d93307d1a3195c1650.svg",
     "static/media/logo.svg": "/static/media/logo.f9bff1a9c877cb072286c690388717cc.svg",
     "static/media/001-loupe.svg": "/static/media/001-loupe.3ffc0491b96bd760a1c15c5ab305794a.svg",
+    "static/media/arrow.svg": "/static/media/arrow.0df6af87468c97885409de4e2c52e5b5.svg",
     "index.html": "/index.html",
-    "main.083904cf.css.map": "/static/css/main.083904cf.css.map",
-    "main.dce0d494.js.map": "/static/js/main.dce0d494.js.map"
+    "main.a9163b3b.css.map": "/static/css/main.a9163b3b.css.map",
+    "main.d8837765.js.map": "/static/js/main.d8837765.js.map"
   },
   "entrypoints": [
-    "static/css/main.083904cf.css",
-    "static/js/main.dce0d494.js"
+    "static/css/main.a9163b3b.css",
+    "static/js/main.d8837765.js"
   ]
 }
