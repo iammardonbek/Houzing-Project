@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const ImageWrapper = styled.div`
-  height: 571px;
   position: relative;
+  height: 571px;
 
   img {
     width: 100%;
@@ -15,6 +15,7 @@ export const ImageWrapper = styled.div`
 `;
 export const CarouselWrapper = styled.div`
   position: relative;
+  height: 571px;
 `;
 export const CarouselText = styled.div`
   position: absolute;
@@ -43,7 +44,7 @@ export const CarouselText = styled.div`
     line-height: 36px;
     letter-spacing: -0.02em;
     color: #ffffff;
-    margin-top: 24px;
+    margin-top: 20px;
   }
 `;
 export const IconLeft = styled.span`

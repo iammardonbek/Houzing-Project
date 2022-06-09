@@ -5,7 +5,7 @@ import unsplash1 from "../../Assets/unsplash1.png";
 import unsplash2 from "../../Assets/unsplash2.png";
 import Button from "../Buttons/buttons";
 import Arrow from "../../Assets/arrow.svg";
-import HouseInfo from "../HouseInfo/HouseInfo";
+
 import { useRef } from "react";
 import {
   ImageWrapper,
@@ -14,12 +14,13 @@ import {
   IconLeft,
   IconRight,
 } from "./SliderStyle";
+import { HouseDetails, Cars, Baths, Fields, Beds } from "../../style";
 
 export const Slider = () => {
   const slider = useRef();
   return (
     <CarouselWrapper>
-      <Carousel ref={slider} autoplay>
+      <Carousel ref={slider}>
         <ImageWrapper>
           <img src={unsplash} alt="rasm" />
         </ImageWrapper>
@@ -33,7 +34,24 @@ export const Slider = () => {
       <CarouselText>
         <h1>Skyper Pool Partment</h1>
         <p>112 Glenwood Ave Hyde Park, Boston, MA</p>
-        <HouseInfo color="white" />
+        <HouseDetails>
+          <span>
+            <Beds />
+            <p>4 beds</p>
+          </span>
+          <span>
+            <Baths />
+            <p>5 baths</p>
+          </span>
+          <span>
+            <Cars />
+            <p>1 garage</p>
+          </span>
+          <span>
+            <Fields />
+            <p>1200 Sq Ft</p>
+          </span>
+        </HouseDetails>
         <h2>$5,250/mo</h2>
         <Button mt="40px" width="180px">
           read more

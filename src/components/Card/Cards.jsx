@@ -1,19 +1,20 @@
 import React from "react";
-import forCard1 from "../../Assets/forCard1.jpg";
-import HouseInfo from "../HouseInfo/HouseInfo";
-import { CardWrapper, BottomCard, TopCard } from "./CardStyle";
+import NotAvailable from "../../Assets/Image_not_available.png";
+import { CardWrapper, BottomCard, TopCard, CardFooter } from "./CardStyle";
 
-const Cards = ({ height, width }) => {
+const Cards = ({ info }) => {
   return (
-    <CardWrapper width={width} height={height}>
+    <CardWrapper>
       <TopCard>
-        <img src={forCard1} alt="rasm" />
+        <img src={info?.img || NotAvailable} alt="rasm" />
       </TopCard>
       <BottomCard>
-        <h2>New Apartment Nice Wiew</h2>
-        <p>Quincy St, Brooklyn, NY, USA</p>
-        <HouseInfo stroke="#696969" />
+        <h2 className="cardTitle">New Apartment Nice View</h2>
+        <p className="cardSubtitle">Quincy St, Brooklyn, NY, USA</p>
       </BottomCard>
+      <CardFooter>
+        <h2 className="cardTitle">$7,500/mo</h2>
+      </CardFooter>
     </CardWrapper>
   );
 };

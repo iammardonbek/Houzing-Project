@@ -1,5 +1,40 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { ReactComponent as Car } from "./Assets/car.svg";
+import { ReactComponent as Bed } from "./Assets/beds.svg";
+import { ReactComponent as Bath } from "./Assets/baths.svg";
+import { ReactComponent as Field } from "./Assets/field.svg";
+
+export const HouseDetails = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 337px;
+  p {
+    color: white;
+    font-size: 16px;
+  }
+`;
+
+export const Cars = styled(Car)`
+  path {
+    fill: ${({ fill }) => (fill ? fill : "white")};
+  }
+`;
+export const Beds = styled(Bed)`
+  path {
+    fill: ${({ fill }) => (fill ? fill : "white")};
+  }
+`;
+export const Baths = styled(Bath)`
+  path {
+    fill: ${({ fill }) => (fill ? fill : "white")};
+  }
+`;
+export const Fields = styled(Field)`
+  path {
+    fill: ${({ fill }) => (fill ? fill : "white")};
+  }
+`;
 
 export const LogoLink = styled(Link)`
   text-decoration: none;

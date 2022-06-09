@@ -5,8 +5,8 @@ import { Container } from "./RecommendedStyle";
 const Recommended = () => {
   return (
     <Container>
-      <h1>Recommended</h1>
-      <p>
+      <h1 className="title">Recommended</h1>
+      <p className="subtitle">
         Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
       </p>
       <Cards />
