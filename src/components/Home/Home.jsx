@@ -1,5 +1,5 @@
 import React from "react";
-import Recommended from "../Recommended/Recommended";
+import Recommended from "./Recommended/Recommended";
 import { Search } from "../SearchBar/Search";
 import { Slider } from "../Slider/Slider";
 

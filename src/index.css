@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
 @import "~antd/dist/antd.css";
+@import "react-alice-carousel/lib/alice-carousel.css";
 
 * {
   box-sizing: border-box;
@@ -43,10 +44,24 @@ h1 {
   font-size: 16px;
   line-height: 24px;
   color: var(--headerColor);
+  margin-bottom: 4px;
 }
 .cardSubtitle {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   color: var(--secondaryColor);
+}
+.HouseSpecs {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--secondaryColor);
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
+.discount {
+  font-size: 12px;
+  text-decoration-line: line-through;
+  color: var(--secondaryColor);
+  margin-bottom: 0;
 }

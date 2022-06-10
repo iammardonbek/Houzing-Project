@@ -13,8 +13,9 @@ import {
   CarouselWrapper,
   IconLeft,
   IconRight,
+  HouseDetails,
 } from "./SliderStyle";
-import { HouseDetails, Cars, Baths, Fields, Beds } from "../../style";
+import { Cars, Baths, Fields, Beds } from "../../style";
 
 export const Slider = () => {
   const slider = useRef();

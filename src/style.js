@@ -5,13 +5,11 @@ import { ReactComponent as Bed } from "./Assets/beds.svg";
 import { ReactComponent as Bath } from "./Assets/baths.svg";
 import { ReactComponent as Field } from "./Assets/field.svg";
 
-export const HouseDetails = styled.div`
+export const HouseSpecs = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 337px;
-  p {
-    color: white;
-    font-size: 16px;
+  span {
+    text-align: center;
   }
 `;
 

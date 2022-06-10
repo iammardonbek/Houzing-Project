@@ -1,5 +1,15 @@
 import styled from "styled-components";
 
+export const HouseDetails = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 337px;
+  p {
+    color: white;
+    font-size: 16px;
+  }
+`;
+
 export const ImageWrapper = styled.div`
   position: relative;
   height: 571px;
