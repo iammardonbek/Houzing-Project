@@ -55,7 +55,7 @@ export const Header = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px;
+    max-width: 1180px;
     width: 100%;
     padding: 10px 20px;
 
@@ -95,7 +95,7 @@ export const SearchBarContainer = styled.div`
   > div {
     display: flex;
     justify-content: space-between;
-    max-width: 1400px;
+    max-width: 1180px;
     width: 100%;
     padding: 10px 20px;
     p {
