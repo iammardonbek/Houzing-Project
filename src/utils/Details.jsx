@@ -1,5 +1,5 @@
 import { Home } from "../components/Home/Home";
-import forCard1 from "../Assets/forCard1.jpg";
+import Properties from "../components/Properties/Properties";
 
 export const NavbarDetails = [
   {
@@ -12,17 +12,12 @@ export const NavbarDetails = [
     id: "2",
     title: "properties",
     path: "/Properties",
-    element: <Home />,
+    element: <Properties />,
   },
   {
     id: "3",
     title: "contacts",
     path: "/Contacts",
     element: <Home />,
-  },
-];
-export const CardDetails = [
-  {
-    img: "adljfbnjk",
   },
 ];

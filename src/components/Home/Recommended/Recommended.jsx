@@ -1,42 +1,38 @@
 import React from "react";
-import Cards from "../../Card/Cards";
-import { Container, Carousel } from "./RecommendedStyle";
-import { IconLeft, IconRight } from "../../Slider/SliderStyle";
-import Arrow from "../../../Assets/arrow.svg";
-import { useRef } from "react";
+import Carousel from "react-elastic-carousel";
+import Cards from "../../Generic Stuff/PropertyCard/Cards";
+import { Container } from "./RecommendedStyle";
 const Recommended = () => {
-  const responsive = {
-    0: { items: 1 },
-    1024: { items: 3 },
-  };
-  const sliderChange = useRef();
+  const breakPoints = [
+    { width: 1, itemsToShow: 1, navigation: false },
+    { width: 680, itemsToShow: 2 },
+    { width: 950, itemsToShow: 3 },
+    { width: 1180, itemsToShow: 3, navigation: false },
+  ];
 
-  const items = [<Cards />, <Cards />, <Cards />, <Cards />, <Cards />];
   return (
     <Container>
+      <h1 className="title">Recommended</h1>
+      <p className="subtitle">
+        Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
+      </p>
       <div>
-        <h1 className="title">Recommended</h1>
-        <p className="subtitle">
-          Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
-        </p>
         <Carousel
-          ref={sliderChange}
-          mouseTracking
-          items={items}
-          responsive={responsive}
-          controlsStrategy="alternate"
-          disableButtonsControls
-          infinite
-          keyboardNavigation
-          // autoWidth
-        />
+          itemsToShow={3}
+          itemsToScroll={1}
+          breakPoints={breakPoints}
+          itemPadding={[10, 10]}
+          enableAutoPlay
+          autoPlaySpeed={2500}
+        >
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+        </Carousel>
       </div>
-      <IconLeft onClick={() => sliderChange.current.slidePrev()}>
-        <img src={Arrow} alt="Rasm" />
-      </IconLeft>
-      <IconRight onClick={() => sliderChange.current.slideNext()}>
-        <img src={Arrow} alt="Rasm" />
-      </IconRight>
     </Container>
   );
 };

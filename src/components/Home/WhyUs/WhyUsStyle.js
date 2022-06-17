@@ -17,8 +17,15 @@ export const Reasons = styled.div`
   display: grid;
   grid-template-columns: auto auto auto auto;
   column-gap: 77px;
+  @media (max-width: 1100px) {
+    grid-template-columns: auto auto;
+  }
+  @media (max-width: 580px) {
+    grid-template-columns: auto;
+  }
   div {
     text-align: center;
+    max-width: 300px;
     margin-top: 40px;
     h2 {
       margin-bottom: 8px;

@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
 @import "~antd/dist/antd.css";
-@import "react-alice-carousel/lib/alice-carousel.css";
 
 * {
   box-sizing: border-box;
@@ -31,11 +30,11 @@ h1 {
   text-align: center;
   letter-spacing: -0.02em;
   color: var(--headerColor);
+  text-transform: capitalize;
 }
 .subtitle {
   font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
   color: var(--secondaryColor);
   text-align: center;
 }
@@ -64,4 +63,16 @@ h1 {
   text-decoration-line: line-through;
   color: var(--secondaryColor);
   margin-bottom: 0;
+}
+.rec.rec-arrow {
+  background-color: white;
+}
+.sc-fnykZs {
+  width: 100%;
+}
+.lkRolg:focus:enabled,
+.lkRolg:hover:enabled {
+  background-color: white !important;
+  color: black !important;
+  box-shadow: 5px 5px 5px;
 }
