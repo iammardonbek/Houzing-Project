@@ -38,17 +38,17 @@ export const Button = styled.button`
   margin-bottom: ${({ mb }) => (mb ? mb : "auto")};
   cursor: pointer;
   display: flex;
+  align-items: center;
   justify-content: center;
   border-radius: 2px;
-  height: 44px;
-  font-style: normal;
-  font-weight: 400;
   text-transform: capitalize;
   padding: 12px 16px;
-  font-size: 14px;
-  line-height: 20px;
+  height: 44px;
   :active {
     transform: scale(0.98);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  }
+  p {
+    margin-bottom: 0;
   }
 `;

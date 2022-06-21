@@ -7,6 +7,7 @@ import Category from "./Category/Category";
 import Farmhouse from "./Farmhouse/Farmhouse";
 import RecentProperties from "./RecentProperties/RecentProperties";
 import Testimonials from "./Testimonials/Testimonials";
+import Footer from "../Generic Stuff/Footer/Footer";
 
 export function Home() {
   return (
@@ -19,6 +20,7 @@ export function Home() {
       <Farmhouse />
       <RecentProperties />
       <Testimonials />
+      <Footer />
     </div>
   );
 }

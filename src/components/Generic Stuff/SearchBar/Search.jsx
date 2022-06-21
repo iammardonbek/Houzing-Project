@@ -12,6 +12,7 @@ export const Search = () => {
     <SearchBarContainer>
       <div>
         <GenericInput
+          className="generic-input"
           pl="8px"
           width="100%"
           placeholder="Enter an address, neighborhood, city, or ZIP code"
@@ -22,8 +23,9 @@ export const Search = () => {
           placement="bottomRight"
           trigger="click"
           content={advancedSearch}
+          className="pop-over"
         >
-          <Button ml="20px" mr="20px" type="secondary" width="130px">
+          <Button className="SearchBtn" type="secondary" width="130px">
             <img src={AdvancedLogo} alt="rasm" />
             <p>advanced</p>
           </Button>

@@ -43,13 +43,19 @@ export const CarouselText = styled.div`
     color: white;
     font-weight: 700;
     font-size: 44px;
-    line-height: 48px;
+    margin-bottom: 8px;
+    @media (max-width: 700px) {
+      font-size: 28px;
+    }
   }
   > p {
     font-weight: 400;
     font-size: 16px;
-    line-height: 24px;
     color: #ffffff;
+    margin-bottom: 25px;
+    @media (max-width: 700px) {
+      font-size: 14px;
+    }
   }
   > h2 {
     font-weight: 600;
@@ -73,6 +79,9 @@ export const IconLeft = styled.span`
   height: 45px;
   transform: translate(100%, -50%);
   cursor: pointer;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 export const IconRight = styled.span`
   display: flex;
@@ -89,5 +98,8 @@ export const IconRight = styled.span`
   cursor: pointer;
   img {
     transform: rotate(180deg);
+  }
+  @media (max-width: 600px) {
+    display: none;
   }
 `;

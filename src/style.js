@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+
 import { ReactComponent as Car } from "./Assets/car.svg";
 import { ReactComponent as Bed } from "./Assets/beds.svg";
 import { ReactComponent as Bath } from "./Assets/baths.svg";
@@ -34,53 +34,6 @@ export const Fields = styled(Field)`
   }
 `;
 
-export const LogoLink = styled(Link)`
-  text-decoration: none;
-  color: white;
-  display: flex;
-  align-items: center;
-  h3 {
-    margin-left: 10px;
-    color: white;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-weight: 900;
-  }
-`;
-export const Header = styled.div`
-  background-color: var(--headerColor);
-  justify-content: center;
-  display: flex;
-  div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1180px;
-    width: 100%;
-    padding: 10px 20px;
-
-    > .Login {
-      color: white;
-      text-decoration: none;
-      border: 1px solid white;
-      padding: 12px 40px;
-      font-size: 14px;
-    }
-  }
-`;
-export const Nav = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  width: 32%;
-  a {
-    color: white;
-    text-transform: capitalize;
-    text-decoration: none;
-    &.active {
-      color: aqua;
-    }
-  }
-`;
 export const SearchBarContainer = styled.div`
   justify-content: center;
   display: flex;
@@ -93,11 +46,17 @@ export const SearchBarContainer = styled.div`
     flex: 1;
   }
   > div {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 130px 180px;
+    gap: 20px;
     justify-content: space-between;
     max-width: 1180px;
     width: 100%;
     padding: 10px 20px;
+    @media (max-width: 600px) {
+      padding: 25px;
+    }
+
     p {
       margin-left: 8px;
     }

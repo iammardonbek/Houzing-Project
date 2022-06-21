@@ -12,6 +12,7 @@ import { Search } from "../Generic Stuff/SearchBar/Search";
 import Cards from "../Generic Stuff/PropertyCard/Cards";
 import { Button } from "../Generic Stuff/Buttons/buttonStyle";
 import { useState } from "react";
+import Footer from "../Generic Stuff/Footer/Footer";
 
 const { REACT_APP_BASE_LINK: url } = process.env;
 
@@ -60,6 +61,7 @@ const Properties = () => {
           width="250px"
         />
       </Body>
+      <Footer />
     </Container>
   );
 };

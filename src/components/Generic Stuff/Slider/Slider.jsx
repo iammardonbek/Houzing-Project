@@ -21,7 +21,7 @@ export const Slider = () => {
   const slider = useRef();
   return (
     <CarouselWrapper>
-      <Carousel ref={slider}>
+      <Carousel autoplay ref={slider}>
         <ImageWrapper>
           <img src={unsplash} alt="rasm" />
         </ImageWrapper>

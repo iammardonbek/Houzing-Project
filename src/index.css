@@ -76,3 +76,17 @@ h1 {
   color: black !important;
   box-shadow: 5px 5px 5px;
 }
+.rec-carousel {
+  max-width: 1400px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+.rec-slider-container {
+  max-width: 1180px;
+}
+@media only screen and (max-width: 600px) {
+  .rec.rec-arrow {
+    display: none;
+  }
+}

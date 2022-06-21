@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  padding: 0 20px;
-`;
+export const Container = styled.div``;
 export const Body = styled.div`
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
