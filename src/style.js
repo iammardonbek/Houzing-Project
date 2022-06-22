@@ -47,16 +47,15 @@ export const SearchBarContainer = styled.div`
   }
   > div {
     display: grid;
-    grid-template-columns: 1fr 130px 180px;
+    grid-template-columns: 1fr auto;
     gap: 20px;
     justify-content: space-between;
     max-width: 1180px;
     width: 100%;
     padding: 10px 20px;
     @media (max-width: 600px) {
-      padding: 25px;
+      grid-template-columns: 1fr;
     }
-
     p {
       margin-left: 8px;
     }
@@ -91,4 +90,9 @@ export const AdvancedTrigger = styled.div`
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 65%;
+`;
+export const SearchButtons = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 20px;
 `;

@@ -28,7 +28,9 @@ export const ImageWrapper = styled.div`
 export const CarouselWrapper = styled.div`
   position: relative;
   height: 100%;
-  background-color: aliceblue;
+  :last-child {
+    display: none;
+  }
 `;
 export const CarouselText = styled.div`
   position: absolute;

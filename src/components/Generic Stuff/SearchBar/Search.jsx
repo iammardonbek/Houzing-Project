@@ -3,15 +3,56 @@ import React from "react";
 import SearchLogo from "../../../Assets/001-loupe.svg";
 import homeInSearch from "../../../Assets/homeInSearch.svg";
 import AdvancedLogo from "../../../Assets/setting-lines.svg";
-import { SearchBarContainer } from "../../../style";
+import { SearchBarContainer, SearchButtons } from "../../../style";
 import { Button } from "../Buttons/buttonStyle";
 import GenericInput from "../Input/GenericInput";
-import { advancedSearch } from "./Advanced";
+import { Advanced, AdvancedInputs, AdvancedTrigger } from "../../../style";
+import { useLocation, useNavigate } from "react-router-dom";
+
 export const Search = () => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  const change = ({ target }) => {
+    const { value, name } = target;
+    navigate(`${pathname}?${name}=${value}`);
+  };
+  const advancedSearch = (
+    <Advanced>
+      <Advanced.Title>address</Advanced.Title>
+      <AdvancedInputs>
+        <GenericInput onChange={change} name="country" placeholder="Country" />
+        <GenericInput placeholder="Region" />
+        <GenericInput placeholder="City" />
+        <GenericInput placeholder="Zip code" />
+      </AdvancedInputs>
+      <Advanced.Title>apartment info</Advanced.Title>
+      <AdvancedInputs>
+        <GenericInput placeholder="Zip code" />
+        <GenericInput placeholder="Size" />
+        <GenericInput placeholder="Sort" />
+      </AdvancedInputs>
+      <Advanced.Title>price</Advanced.Title>
+      <AdvancedInputs>
+        <GenericInput placeholder="Min price" />
+        <GenericInput placeholder="Max price" />
+      </AdvancedInputs>
+      <AdvancedTrigger>
+        <Button width="130px" type="cancel">
+          Cancel
+        </Button>
+        <Button width="130px" type="primary">
+          Submit
+        </Button>
+      </AdvancedTrigger>
+    </Advanced>
+  );
+
   return (
     <SearchBarContainer>
       <div>
         <GenericInput
+          onChange={change}
           className="generic-input"
           pl="8px"
           width="100%"
@@ -19,21 +60,23 @@ export const Search = () => {
         >
           <img src={homeInSearch} alt="rasm" />
         </GenericInput>
-        <Popover
-          placement="bottomRight"
-          trigger="click"
-          content={advancedSearch}
-          className="pop-over"
-        >
-          <Button className="SearchBtn" type="secondary" width="130px">
-            <img src={AdvancedLogo} alt="rasm" />
-            <p>advanced</p>
+        <SearchButtons>
+          <Popover
+            placement="bottomRight"
+            trigger="click"
+            content={advancedSearch}
+            className="pop-over"
+          >
+            <Button className="SearchBtn" type="secondary" width="130px">
+              <img src={AdvancedLogo} alt="rasm" />
+              <p>advanced</p>
+            </Button>
+          </Popover>
+          <Button width="180px" type="primary">
+            <img src={SearchLogo} alt="rasm" />
+            <p>search</p>
           </Button>
-        </Popover>
-        <Button width="180px" type="primary">
-          <img src={SearchLogo} alt="rasm" />
-          <p>search</p>
-        </Button>
+        </SearchButtons>
       </div>
     </SearchBarContainer>
   );

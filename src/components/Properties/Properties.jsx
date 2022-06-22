@@ -13,10 +13,12 @@ import Cards from "../Generic Stuff/PropertyCard/Cards";
 import { Button } from "../Generic Stuff/Buttons/buttonStyle";
 import { useState } from "react";
 import Footer from "../Generic Stuff/Footer/Footer";
+import { useLocation } from "react-router-dom";
 
 const { REACT_APP_BASE_LINK: url } = process.env;
 
 const Properties = () => {
+  const { search } = useLocation();
   const [data, setData] = useState([]);
   useQuery(
     "",

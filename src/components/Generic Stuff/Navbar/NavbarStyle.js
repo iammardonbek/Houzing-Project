@@ -30,6 +30,7 @@ export const Header = styled.div`
     padding: 10px 20px;
     @media (max-width: 600px) {
       grid-template-columns: auto auto auto;
+      gap: 0;
     }
     .logButton {
       @media (max-width: 700px) {

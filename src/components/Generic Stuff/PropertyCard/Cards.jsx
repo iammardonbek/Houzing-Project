@@ -26,9 +26,7 @@ const Cards = ({ info }) => {
         <Owner>
           <img src={info?.img || NoPhoto} alt="rasm" />
         </Owner>
-        <h2 className="cardTitle">
-          {info?.description || "New Apartment Nice View"}
-        </h2>
+        <h2 className="cardTitle">{info?.name || "New Apartment Nice View"}</h2>
         <p className="cardSubtitle">
           {info?.address || "Quincy St, Brooklyn, NY, USA"}
         </p>
@@ -53,8 +51,8 @@ const Cards = ({ info }) => {
       </BottomCard>
       <CardFooter>
         <div>
-          <p className="discount">$2,800/mo</p>
-          <h2 className="cardTitle">${info?.price}/mo</h2>
+          <p className="discount">${info?.salePrice}/month</p>
+          <h2 className="cardTitle">${info?.price}/month</h2>
         </div>
         <div>
           <span>

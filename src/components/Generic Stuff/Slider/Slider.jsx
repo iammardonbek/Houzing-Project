@@ -5,6 +5,7 @@ import unsplash1 from "../../../Assets/unsplash1.png";
 import unsplash2 from "../../../Assets/unsplash2.png";
 import Button from "../Buttons/buttons";
 import Arrow from "../../../Assets/arrow.svg";
+// import { Search } from "../SearchBar/Search";
 
 import { useRef } from "react";
 import {
@@ -64,6 +65,7 @@ export const Slider = () => {
       <IconRight onClick={() => slider.current.next()}>
         <img src={Arrow} alt="Rasm" />
       </IconRight>
+      {/* <Search /> */}
     </CarouselWrapper>
   );
 };

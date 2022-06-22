@@ -2,6 +2,7 @@ import React from "react";
 import { InputWrapper, Input, InputLogo } from "./GenericInputStyle";
 
 const GenericInput = ({
+  name,
   width,
   children,
   pl,
@@ -21,6 +22,7 @@ const GenericInput = ({
         type={type}
         placeholder={placeholder}
         onChange={onChange}
+        name={name}
       />
     </InputWrapper>
   );

@@ -7,7 +7,7 @@ export const CardWrapper = styled.div`
   text-align: start;
   border: 1px solid #e6e9ec;
   :hover {
-    box-shadow: 2px 3px 5px 3px rgba(0, 0, 0, 0.55);
+    box-shadow: 2px 3px 5px 3px rgba(0, 0, 0, 0.1);
   }
 `;
 export const TopCard = styled.div`
