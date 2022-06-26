@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar } from "./components/Generic Stuff/Navbar/Navbar";
 import { NavbarDetails } from "./utils/Details";
 import { Route, Routes } from "react-router-dom";
+import SignIn from "./components/SignIn/SignIn";
 
 export default function App() {
   return (
@@ -11,7 +12,7 @@ export default function App() {
           {NavbarDetails.map(({ id, path, element }) => (
             <Route key={id} path={path} element={element} />
           ))}
-          <Route path="Login" />
+          <Route element={<SignIn />} path="Login" />
         </Route>
       </Routes>
     </div>

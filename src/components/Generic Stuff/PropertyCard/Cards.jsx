@@ -28,7 +28,7 @@ const Cards = ({ info }) => {
         </Owner>
         <h2 className="cardTitle">{info?.name || "New Apartment Nice View"}</h2>
         <p className="cardSubtitle">
-          {info?.address || "Quincy St, Brooklyn, NY, USA"}
+          {info?.city || "Quincy St, Brooklyn, NY, USA"}
         </p>
         <HouseSpecs>
           <span>

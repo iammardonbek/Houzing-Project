@@ -23,11 +23,12 @@ const Properties = () => {
   useQuery(
     "",
     () => {
-      return fetch(`${url}/v1/houses/list`).then((res) => res.json());
+      return fetch(`${url}v1/houses/list${search}`).then((res) => res.json());
     },
     {
       onSuccess: (res) => {
-        setData(res.data);
+        setData(res?.data || []);
+        console.log(res.data);
       },
     }
   );
@@ -42,7 +43,7 @@ const Properties = () => {
           </p>
         </Title>
         <SortingPart>
-          <p>{data.length} results</p>
+          <p>{data?.length} results</p>
           <Sort>
             sort by:
             <select>

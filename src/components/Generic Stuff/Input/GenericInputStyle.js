@@ -13,6 +13,9 @@ export const InputWrapper = styled.div`
   border-radius: 2px;
   padding-left: 16px;
   padding-right: 16px;
+  border-top: ${({ bt }) => (bt ? bt : "1px solid #e6e9ec")};
+  border-left: ${({ bl }) => (bl ? bl : "1px solid #e6e9ec")};
+  border-right: ${({ br }) => (br ? br : "1px solid #e6e9ec")};
 `;
 export const InputLogo = styled.div``;
 export const Input = styled.input`

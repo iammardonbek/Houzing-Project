@@ -5,6 +5,7 @@ const GenericInput = ({
   name,
   width,
   children,
+  defaultValue,
   pl,
   mt,
   mr,
@@ -13,11 +14,24 @@ const GenericInput = ({
   placeholder,
   onChange,
   type,
+  bt,
+  bl,
+  br,
 }) => {
   return (
-    <InputWrapper width={width} mt={mt} mr={mr} mb={mb} ml={ml}>
+    <InputWrapper
+      width={width}
+      mt={mt}
+      mr={mr}
+      mb={mb}
+      ml={ml}
+      bt={bt}
+      bl={bl}
+      br={br}
+    >
       <InputLogo>{children}</InputLogo>
       <Input
+        defaultValue={defaultValue}
         pl={pl}
         type={type}
         placeholder={placeholder}

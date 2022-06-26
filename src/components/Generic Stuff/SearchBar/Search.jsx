@@ -7,15 +7,16 @@ import { SearchBarContainer, SearchButtons } from "../../../style";
 import { Button } from "../Buttons/buttonStyle";
 import GenericInput from "../Input/GenericInput";
 import { Advanced, AdvancedInputs, AdvancedTrigger } from "../../../style";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import UseSearch from "../../Hooks/useSearch";
+import UseReplace from "../../Hooks/useReplace";
 
 export const Search = () => {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
-
+  const query = UseSearch();
   const change = ({ target }) => {
     const { value, name } = target;
-    navigate(`${pathname}?${name}=${value}`);
+    navigate(UseReplace(name, value));
   };
   const advancedSearch = (
     <Advanced>
@@ -23,7 +24,12 @@ export const Search = () => {
       <AdvancedInputs>
         <GenericInput onChange={change} name="country" placeholder="Country" />
         <GenericInput placeholder="Region" />
-        <GenericInput placeholder="City" />
+        <GenericInput
+          defaultValue={query.get("city")}
+          onChange={change}
+          name="city"
+          placeholder="City"
+        />
         <GenericInput placeholder="Zip code" />
       </AdvancedInputs>
       <Advanced.Title>apartment info</Advanced.Title>
@@ -54,6 +60,7 @@ export const Search = () => {
         <GenericInput
           onChange={change}
           className="generic-input"
+          name="city"
           pl="8px"
           width="100%"
           placeholder="Enter an address, neighborhood, city, or ZIP code"
