@@ -17,6 +17,7 @@ const GenericInput = ({
   bt,
   bl,
   br,
+  ref,
 }) => {
   return (
     <InputWrapper
@@ -28,6 +29,7 @@ const GenericInput = ({
       bt={bt}
       bl={bl}
       br={br}
+      ref={ref}
     >
       <InputLogo>{children}</InputLogo>
       <Input

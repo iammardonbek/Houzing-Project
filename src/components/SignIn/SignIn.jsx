@@ -1,26 +1,41 @@
-import React from "react";
 import Footer from "../Generic Stuff/Footer/Footer";
 import Button from "../Generic Stuff/Buttons/buttons";
-import { MainBody, Container, Form, InputWrapper } from "./SignInStyle";
+import { useRef } from "react";
+import { MainBody, Container, Form } from "./SignInStyle";
+import InputWithLabel from "../Generic Stuff/InputWithLabel/InputWithLabel";
+import { useEffect } from "react";
 
-const SignIn = () => {
+const SignIn = ({ autoFocus }) => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  useEffect(() => {
+    if (autoFocus && emailRef.current) {
+      emailRef.current.focus();
+    }
+  }, [autoFocus]);
   return (
     <Container>
       <MainBody>
         <Form>
           <h1>sign in</h1>
-          <InputWrapper className="searchformfld">
-            <input placeholder=" " type="text" />
-            <label>login</label>
-          </InputWrapper>
-          <InputWrapper className="searchformfld">
-            <input placeholder=" " type="text" />
-            <label>password</label>
-          </InputWrapper>
+          <InputWithLabel
+            ref={emailRef}
+            children={"Login"}
+            placeholder={" "}
+            autoFocus
+            id={"login"}
+          />
+          <InputWithLabel
+            children={"Password"}
+            placeholder={" "}
+            id={"password"}
+            type="password"
+            ref={passwordRef}
+          />
           <section>
             <span>
               <input id="remember" type="checkbox" />
-              <label for="remember">Remember me</label>
+              <label htmlFor="remember">Remember me</label>
             </span>
             <a href="#">Forgot</a>
           </section>
