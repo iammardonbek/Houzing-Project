@@ -1,4 +1,5 @@
 @import "~antd/dist/antd.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 
 * {
   box-sizing: border-box;
@@ -23,7 +24,7 @@ h1 {
   --headerColor: #0d263b;
 }
 .title {
-  font-weight: 600;
+  font-weight: 600px;
   font-size: 28px;
   line-height: 36px;
   text-align: center;
