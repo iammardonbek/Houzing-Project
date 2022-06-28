@@ -5,8 +5,10 @@ import { NavbarDetails } from "../../../utils/Details";
 import Logo from "../../../Assets/logo.svg";
 import Button from "../Buttons/buttons";
 import { ReactComponent as Login } from "../../../Assets/Login.svg";
+import { useLocation } from "react-router-dom";
 
 export const Navbar = () => {
+  const location = useLocation();
   return (
     <>
       <Header>
@@ -23,9 +25,12 @@ export const Navbar = () => {
               </NavLink>
             ))}
           </Nav>
-          <Link className="logButton" to="Login">
-            <Button width="120px" children="Login" />
-          </Link>
+
+          {location.pathname !== "/Login" && (
+            <Link className="logButton" to="Login">
+              <Button width="120px" children="Login" />
+            </Link>
+          )}
           <Link className="none" to="Login">
             <Login />
           </Link>

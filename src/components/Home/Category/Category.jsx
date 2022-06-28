@@ -1,6 +1,4 @@
 import React from "react";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
 import Carousel from "react-elastic-carousel";
 import Card from "./Card/Card";
 import { Container, Slider } from "./CategoryStyle";

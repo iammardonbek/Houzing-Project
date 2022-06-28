@@ -1,18 +1,39 @@
 import Footer from "../Generic Stuff/Footer/Footer";
 import Button from "../Generic Stuff/Buttons/buttons";
+import React from "react";
 import { useRef } from "react";
-import { MainBody, Container, Form } from "./SignInStyle";
+import { MainBody, Container, Form, NewAccount } from "./SignInStyle";
 import InputWithLabel from "../Generic Stuff/InputWithLabel/InputWithLabel";
-import { useEffect } from "react";
+import { useMutation } from "react-query";
+import { useNavigate } from "react-router-dom";
 
-const SignIn = ({ autoFocus }) => {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  useEffect(() => {
-    if (autoFocus && emailRef.current) {
-      emailRef.current.focus();
+const { REACT_APP_BASE_LINK: url } = process.env;
+const SignIn = () => {
+  const navigate = useNavigate();
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
+  const { mutate } = useMutation(
+    () => {
+      return fetch(`${url}public/auth/login`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          email: emailRef.current.value,
+          password: passwordRef.current.value,
+        }),
+      }).then((res) => res.json());
+    },
+    {
+      onSuccess: (res) => {
+        const token = res.authenticationToken;
+        if (token) navigate("/");
+        localStorage.setItem("token", token);
+      },
     }
-  }, [autoFocus]);
+  );
+  const onSubmit = () => {
+    mutate();
+  };
   return (
     <Container>
       <MainBody>
@@ -39,7 +60,14 @@ const SignIn = ({ autoFocus }) => {
             </span>
             <a href="#">Forgot</a>
           </section>
-          <Button mt="40px" width="100%" type={"primary"} children="login" />
+          <Button
+            onClick={onSubmit}
+            mt="40px"
+            width="100%"
+            type={"primary"}
+            children="login"
+          />
+          <NewAccount>Create a new account</NewAccount>
         </Form>
       </MainBody>
       <Footer />

@@ -7,7 +7,7 @@ export const MainBody = styled.div`
   align-items: center;
   justify-content: center;
 `;
-export const Form = styled.form`
+export const Form = styled.div`
   padding: 24px 30px 48px;
   border: 1px solid #e6e9ec;
   box-shadow: 0px 10px 30px rgba(13, 38, 59, 0.05);
@@ -39,4 +39,10 @@ export const Form = styled.form`
     text-align: start;
     margin-bottom: 68px;
   }
+`;
+export const NewAccount = styled.p`
+  margin-top: 10px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--headerColor);
 `;

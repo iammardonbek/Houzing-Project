@@ -27,6 +27,7 @@ export const Header = styled.div`
     align-items: center;
     max-width: 1180px;
     width: 100%;
+    height: 64px;
     padding: 10px 20px;
     @media (max-width: 600px) {
       grid-template-columns: auto auto auto;
