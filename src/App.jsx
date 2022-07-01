@@ -7,7 +7,7 @@ import Register from "./components/Register/Register";
 
 export default function App() {
   return (
-    <div>
+    <div className="app_container">
       <Routes>
         <Route element={<Navbar />}>
           {NavbarDetails.map(({ id, path, element }) => (

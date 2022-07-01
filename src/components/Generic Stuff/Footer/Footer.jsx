@@ -3,11 +3,11 @@ import {
   Bottom,
   Container,
   Copyrights,
-  Director,
   FooterColumns,
   Top,
 } from "./FooterStyle";
-import Button from "../Buttons/buttons";
+import BackToTop from "../BackToTop/BackToTop";
+
 import { ReactComponent as LocateBranch } from "../../../Assets/LocateBranch.svg";
 import { ReactComponent as Call } from "../../../Assets/Call.svg";
 import { ReactComponent as Email } from "../../../Assets/Email.svg";
@@ -82,12 +82,10 @@ const Footer = () => {
           </LogoLink>
           <div>
             <p>Copyright © 2021 CreativeLayers. All Right Reserved.</p>
-            <Button type={"primary"}>
-              <Director />
-            </Button>
           </div>
         </Copyrights>
       </Bottom>
+      <BackToTop />
     </Container>
   );
 };

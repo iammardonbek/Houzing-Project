@@ -3,6 +3,7 @@ import { Button } from "./buttonStyle";
 
 const Btn = ({
   type,
+  className,
   width,
   background,
   children,
@@ -21,6 +22,7 @@ const Btn = ({
       mr={mr}
       mb={mb}
       ml={ml}
+      className={className}
       onClick={onClick}
     >
       {children}

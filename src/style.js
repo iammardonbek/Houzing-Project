@@ -4,6 +4,7 @@ import { ReactComponent as Car } from "./Assets/car.svg";
 import { ReactComponent as Bed } from "./Assets/beds.svg";
 import { ReactComponent as Bath } from "./Assets/baths.svg";
 import { ReactComponent as Field } from "./Assets/field.svg";
+import { ReactComponent as Arrow } from "./Assets/arrowRight.svg";
 
 export const HouseSpecs = styled.div`
   display: flex;
@@ -95,4 +96,7 @@ export const SearchButtons = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   column-gap: 20px;
+`;
+export const Director = styled(Arrow)`
+  transform: rotate(270deg);
 `;

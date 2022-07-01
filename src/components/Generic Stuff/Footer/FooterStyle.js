@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { ReactComponent as Arrow } from "../../../Assets/arrowRight.svg";
 
 export const Container = styled.div`
   background: var(--headerColor);
@@ -91,7 +90,6 @@ export const Copyrights = styled.div`
     color: white;
     text-transform: capitalize;
     margin-bottom: 0;
-    margin-right: 73px;
     max-width: 400px;
     @media (max-width: 800px) {
       margin-right: 10px;
@@ -105,7 +103,4 @@ export const Copyrights = styled.div`
     grid-template-columns: auto auto;
     align-items: center;
   }
-`;
-export const Director = styled(Arrow)`
-  transform: rotate(270deg);
 `;
