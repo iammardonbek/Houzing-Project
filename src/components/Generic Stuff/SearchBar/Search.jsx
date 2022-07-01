@@ -17,7 +17,7 @@ export const Search = () => {
   const query = UseSearch();
   const change = ({ target }) => {
     const { value, name } = target;
-    navigate(UseReplace(name, value));
+    navigate(`${UseReplace(value, name)}`);
   };
   const [visible, setVisible] = useState(false);
 
@@ -32,7 +32,12 @@ export const Search = () => {
     <Advanced>
       <Advanced.Title>address</Advanced.Title>
       <AdvancedInputs>
-        <GenericInput onChange={change} name="country" placeholder="Country" />
+        <GenericInput
+          defaultValue={query.get("country")}
+          onChange={change}
+          name="country"
+          placeholder="Country"
+        />
         <GenericInput
           defaultValue={query.get("region")}
           onChange={change}
