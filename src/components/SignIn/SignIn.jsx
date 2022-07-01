@@ -26,13 +26,16 @@ const SignIn = () => {
     {
       onSuccess: (res) => {
         const token = res.authenticationToken;
-        if (token) navigate("/");
         localStorage.setItem("token", token);
+        if (token) navigate("/");
       },
     }
   );
   const onSubmit = () => {
     mutate();
+  };
+  const redirect = () => {
+    navigate("/Register");
   };
   return (
     <Container>
@@ -67,7 +70,7 @@ const SignIn = () => {
             type={"primary"}
             children="login"
           />
-          <NewAccount>Create a new account</NewAccount>
+          <NewAccount onClick={redirect}>Create a new account</NewAccount>
         </Form>
       </MainBody>
       <Footer />

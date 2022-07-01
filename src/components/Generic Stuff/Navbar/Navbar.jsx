@@ -25,7 +25,6 @@ export const Navbar = () => {
               </NavLink>
             ))}
           </Nav>
-
           {location.pathname !== "/Login" && (
             <Link className="logButton" to="Login">
               <Button width="120px" children="Login" />

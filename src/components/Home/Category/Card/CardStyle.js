@@ -12,7 +12,8 @@ export const CardWrapper = styled.div`
   border-radius: 3px;
   position: relative;
   overflow: hidden;
-
+  cursor: pointer;
+  user-select: none;
   img {
     width: 100%;
     height: 100%;
