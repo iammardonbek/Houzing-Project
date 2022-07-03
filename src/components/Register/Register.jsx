@@ -4,7 +4,7 @@ import Footer from "../Generic Stuff/Footer/Footer";
 import { Form, MainBody } from "../SignIn/SignInStyle";
 import InputWithLabel from "../Generic Stuff/InputWithLabel/InputWithLabel";
 import Button from "../Generic Stuff/Buttons/buttons";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useMutation } from "react-query";
 import { useRef } from "react";
 
@@ -15,7 +15,7 @@ const Register = () => {
   const emailRef = useRef("");
   const userRef = useRef("");
   const passwordRef = useRef("");
-  var navigate = useNavigate();
+  // var navigate = useNavigate();
   const [err, setErr] = useState([]);
   const { mutate } = useMutation(
     () => {
@@ -27,12 +27,19 @@ const Register = () => {
           firstname: firstNameRef.current.value,
           lastname: lastNameRef.current.value,
           password: passwordRef.current.value,
-          roleIdSet: userRef.current.value,
+          roleIdSet: [userRef.current.value],
         }),
       }).then((res) => res.json());
     },
     {
-      onSuccess: () => navigate("/"),
+      onSuccess: () => {
+        setErr(err);
+        localStorage.setItem(
+          "newToken",
+          "4d107b6e-c1fa-43eb-89c6-1a657ae9538f"
+        );
+        // navigate("/");
+      },
     }
   );
   const onSubmit = () => {

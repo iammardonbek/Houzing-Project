@@ -4,10 +4,12 @@ import { NavbarDetails } from "./utils/Details";
 import { Route, Routes } from "react-router-dom";
 import SignIn from "./components/SignIn/SignIn";
 import Register from "./components/Register/Register";
+import ScrollToTop from "./components/Generic Stuff/ScrollToTop/ScrollToTop";
 
 export default function App() {
   return (
     <div className="app_container">
+      <ScrollToTop />
       <Routes>
         <Route element={<Navbar />}>
           {NavbarDetails.map(({ id, path, element }) => (

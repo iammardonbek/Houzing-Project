@@ -23,7 +23,6 @@ const Category = () => {
       }).then((res) => res.json()),
     {
       onSuccess: (res) => {
-        console.log(res);
         setData(res.data);
       },
     }
@@ -42,7 +41,9 @@ const Category = () => {
           itemPadding={[0, 20]}
         >
           {data.map((value, index) => {
-            return <Card title={value} id={index + 1} icon={<House />} />;
+            return (
+              <Card key={index} title={value} id={index + 1} icon={<House />} />
+            );
           })}
         </Carousel>
       </Slider>

@@ -81,9 +81,15 @@ Advanced.Title = styled.div`
 export const AdvancedInputs = styled.div`
   display: grid;
   grid-template-columns: 200px 200px 200px 200px;
-  column-gap: 20px;
+  gap: 20px;
   margin-bottom: 20px;
   margin-top: 10px;
+  @media (max-width: 1125px) {
+    grid-template-columns: 200px 200px;
+  }
+  @media (max-width: 530px) {
+    grid-template-columns: 200px;
+  }
 `;
 export const AdvancedTrigger = styled.div`
   background-color: #f6f8f9;
@@ -91,6 +97,13 @@ export const AdvancedTrigger = styled.div`
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 65%;
+  @media (max-width: 1125px) {
+    padding-left: 0%;
+  }
+  @media (max-width: 530px) {
+    flex-direction: column;
+    row-gap: 20px;
+  }
 `;
 export const SearchButtons = styled.div`
   display: grid;

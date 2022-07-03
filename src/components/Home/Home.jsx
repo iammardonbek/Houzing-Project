@@ -10,7 +10,6 @@ import Testimonials from "./Testimonials/Testimonials";
 import Footer from "../Generic Stuff/Footer/Footer";
 
 export function Home() {
-  console.log(localStorage.getItem("token"));
   return (
     <div>
       <Search />

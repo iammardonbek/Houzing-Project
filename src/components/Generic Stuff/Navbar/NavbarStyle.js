@@ -19,6 +19,9 @@ export const Header = styled.div`
   background-color: var(--headerColor);
   display: flex;
   justify-content: center;
+  width: 100%;
+  /* position: fixed; */
+  z-index: 999;
   div {
     display: grid;
     gap: 100px;
@@ -29,18 +32,18 @@ export const Header = styled.div`
     width: 100%;
     height: 64px;
     padding: 10px 20px;
-    @media (max-width: 600px) {
+    @media (max-width: 776px) {
       grid-template-columns: auto auto auto;
       gap: 0;
     }
     .logButton {
-      @media (max-width: 700px) {
+      @media (max-width: 776px) {
         display: none;
       }
     }
     .none {
       display: none;
-      @media (max-width: 700px) {
+      @media (max-width: 776px) {
         display: block;
       }
     }
@@ -50,7 +53,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  @media (max-width: 600px) {
+  @media (max-width: 776px) {
     display: none;
   }
   a {
@@ -64,7 +67,7 @@ export const Nav = styled.nav`
 `;
 export const Burger = styled(BurgerNav)`
   display: none;
-  @media (max-width: 600px) {
+  @media (max-width: 776px) {
     display: block;
   }
 `;

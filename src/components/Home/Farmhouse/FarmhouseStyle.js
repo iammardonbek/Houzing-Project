@@ -6,8 +6,11 @@ export const Container = styled.div`
   overflow: hidden;
   display: flex;
   align-items: center;
+  background: red;
   img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     filter: brightness(50%);
   }
 `;
@@ -16,6 +19,12 @@ export const HouseInfo = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media (max-width: 776px) {
+    width: 600px;
+  }
+  @media (max-width: 776px) {
+    width: 343px;
+  }
 
   h1 {
     font-weight: 600;
@@ -23,5 +32,8 @@ export const HouseInfo = styled.div`
     text-align: center;
     color: #ffffff;
     margin-bottom: 48px;
+    @media (max-width: 776px) {
+      margin-bottom: 24px;
+    }
   }
 `;
