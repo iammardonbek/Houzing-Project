@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ReactComponent as BurgerNav } from "../../../Assets/burgerNav.svg";
 
 export const LogoLink = styled(Link)`
   text-decoration: none;
@@ -22,7 +21,7 @@ export const Header = styled.div`
   width: 100%;
   /* position: fixed; */
   z-index: 999;
-  div {
+  > div {
     display: grid;
     gap: 100px;
     grid-template-columns: auto minmax(100px, 333px) auto;
@@ -54,7 +53,9 @@ export const Nav = styled.nav`
   justify-content: space-between;
   width: 100%;
   @media (max-width: 776px) {
-    display: none;
+    position: fixed;
+    top: 64px;
+    left: -100%;
   }
   a {
     color: white;
@@ -63,11 +64,5 @@ export const Nav = styled.nav`
     &.active {
       color: aqua;
     }
-  }
-`;
-export const Burger = styled(BurgerNav)`
-  display: none;
-  @media (max-width: 776px) {
-    display: block;
   }
 `;

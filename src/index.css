@@ -118,3 +118,33 @@ h1 {
   transition-timing-function: ease;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
+/* hamburger */
+.hamburger {
+  display: none;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+@media only screen and (max-width: 776px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
