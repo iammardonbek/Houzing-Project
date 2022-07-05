@@ -6,9 +6,11 @@ import { MainBody, Container, Form, NewAccount } from "./SignInStyle";
 import InputWithLabel from "../Generic Stuff/InputWithLabel/InputWithLabel";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const { REACT_APP_BASE_LINK: url } = process.env;
 const SignIn = () => {
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const emailRef = useRef("");
   const passwordRef = useRef("");
@@ -27,7 +29,8 @@ const SignIn = () => {
       onSuccess: (res) => {
         const token = res.authenticationToken;
         localStorage.setItem("token", token);
-        if (token) navigate("/");
+        token === null ? setError("invalid email or password") : navigate("/");
+        console.log(token);
       },
     }
   );
@@ -42,6 +45,7 @@ const SignIn = () => {
       <MainBody>
         <Form>
           <h1>sign in</h1>
+          <p>{error}</p>
           <InputWithLabel
             ref={emailRef}
             children={"Login"}

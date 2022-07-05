@@ -36,9 +36,20 @@ export const Navbar = () => {
           </Nav>
           {localStorage.getItem("token") === null ? (
             location.pathname !== "/Login" && (
-              <Link className="logButton" to="Login">
-                <Button width="120px" children="Login" />
-              </Link>
+              <>
+                <Link className="logButton" to="Login">
+                  <Button width="120px" children="Login" />
+                </Link>
+                <div className="dropdown dropdown_login">
+                  <Login
+                    onClick={() => setUserLogo(!userLogo)}
+                    className="userLogo"
+                  />
+                  <Dropdown style={{ display: userLogo ? "block" : "none" }}>
+                    <Link to="Login">Log in</Link>
+                  </Dropdown>
+                </div>
+              </>
             )
           ) : (
             <div className="dropdown">
@@ -47,7 +58,12 @@ export const Navbar = () => {
                 className="userLogo"
               />
               <Dropdown style={{ display: userLogo ? "block" : "none" }}>
-                <Link to="Login">Login</Link>
+                <Link
+                  onClick={() => localStorage.removeItem("token")}
+                  to="Login"
+                >
+                  Log out
+                </Link>
               </Dropdown>
             </div>
           )}

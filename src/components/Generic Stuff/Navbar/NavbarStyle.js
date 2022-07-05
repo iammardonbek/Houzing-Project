@@ -84,7 +84,7 @@ export const Dropdown = styled.div`
   background-color: var(--headerColor);
   position: absolute;
   box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-  top: 43px;
+  top: 44px;
   right: 0px;
   a {
     color: white;
