@@ -130,6 +130,9 @@ h1 {
   transition: all 0.3s ease-in-out;
   background-color: white;
 }
+.nav-menu-active {
+  left: 0;
+}
 @media only screen and (max-width: 776px) {
   .hamburger {
     display: block;
@@ -147,4 +150,11 @@ h1 {
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+}
+/* userlogo */
+.dropdown {
+  position: relative;
+}
+.userLogo {
+  cursor: pointer;
 }

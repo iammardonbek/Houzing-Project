@@ -38,6 +38,7 @@ export const Fields = styled(Field)`
 export const SearchBarContainer = styled.div`
   justify-content: center;
   display: flex;
+  margin-top: 64px;
   span {
     display: flex;
     border: 1px solid #e6e9ec;

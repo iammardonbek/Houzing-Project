@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
-import { Header, Nav, LogoLink } from "./NavbarStyle";
+import { Header, Nav, LogoLink, Dropdown } from "./NavbarStyle";
 import { NavbarDetails } from "../../../utils/Details";
 import Logo from "../../../Assets/logo.svg";
 import Button from "../Buttons/buttons";
@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom";
 export const Navbar = () => {
   const location = useLocation();
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [userLogo, setUserLogo] = useState(false);
   return (
     <>
       <Header>
@@ -26,21 +27,30 @@ export const Navbar = () => {
             <img src={Logo} alt="hello" />
             <h3>Houzing</h3>
           </LogoLink>
-          <Nav>
+          <Nav style={{ left: mobileMenu && "0" }}>
             {NavbarDetails.map(({ id, title, path }) => (
               <NavLink key={id} to={path}>
                 {title}
               </NavLink>
             ))}
           </Nav>
-          {location.pathname !== "/Login" && (
-            <Link className="logButton" to="Login">
-              <Button width="120px" children="Login" />
-            </Link>
+          {localStorage.getItem("token") === null ? (
+            location.pathname !== "/Login" && (
+              <Link className="logButton" to="Login">
+                <Button width="120px" children="Login" />
+              </Link>
+            )
+          ) : (
+            <div className="dropdown">
+              <Login
+                onClick={() => setUserLogo(!userLogo)}
+                className="userLogo"
+              />
+              <Dropdown style={{ display: userLogo ? "block" : "none" }}>
+                <Link to="Login">Login</Link>
+              </Dropdown>
+            </div>
           )}
-          <Link className="none" to="Login">
-            <Login />
-          </Link>
         </div>
       </Header>
       <main>

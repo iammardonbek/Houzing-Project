@@ -18,9 +18,11 @@ export const Header = styled.div`
   background-color: var(--headerColor);
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  /* position: fixed; */
+  position: fixed;
   z-index: 999;
+  top: 0;
   > div {
     display: grid;
     gap: 100px;
@@ -41,7 +43,6 @@ export const Header = styled.div`
       }
     }
     .none {
-      display: none;
       @media (max-width: 776px) {
         display: block;
       }
@@ -56,7 +57,18 @@ export const Nav = styled.nav`
     position: fixed;
     top: 64px;
     left: -100%;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    z-index: 99;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--headerColor);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
   }
+
   a {
     color: white;
     text-transform: capitalize;
@@ -64,5 +76,17 @@ export const Nav = styled.nav`
     &.active {
       color: aqua;
     }
+  }
+`;
+export const Dropdown = styled.div`
+  width: 200px;
+  padding: 20px;
+  background-color: var(--headerColor);
+  position: absolute;
+  box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  top: 43px;
+  right: 0px;
+  a {
+    color: white;
   }
 `;
