@@ -14,9 +14,9 @@ import {
   Owner,
 } from "./CardStyle";
 
-const Cards = ({ info }) => {
+const Cards = ({ info, onClick }) => {
   return (
-    <CardWrapper>
+    <CardWrapper onClick={onClick}>
       <TopCard>
         <img src={info?.attachments[0]?.imgPath || NotAvailable} alt="rasm" />
         <Featured>featured</Featured>

@@ -22,6 +22,7 @@ export const Header = styled.div`
   width: 100%;
   position: fixed;
   z-index: 999;
+  padding: 0 20px;
   top: 0;
   > div {
     display: grid;
@@ -32,7 +33,7 @@ export const Header = styled.div`
     max-width: 1180px;
     width: 100%;
     height: 64px;
-    padding: 10px 20px;
+    padding: 10px 0px;
     @media (max-width: 776px) {
       grid-template-columns: auto auto auto;
       gap: 0;

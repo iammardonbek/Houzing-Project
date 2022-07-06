@@ -13,11 +13,13 @@ import Cards from "../Generic Stuff/PropertyCard/Cards";
 import { Button } from "../Generic Stuff/Buttons/buttonStyle";
 import { useState } from "react";
 import Footer from "../Generic Stuff/Footer/Footer";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 const { REACT_APP_BASE_LINK: url } = process.env;
 
 const Properties = () => {
+  const navigate = useNavigate();
+
   const { search } = useLocation();
   const [data, setData] = useState([]);
   useQuery(
@@ -31,6 +33,9 @@ const Properties = () => {
       },
     }
   );
+  const onSelect = (id) => {
+    navigate(`/properties/:${id}`);
+  };
   return (
     <Container>
       <Search />
@@ -52,7 +57,11 @@ const Properties = () => {
         </SortingPart>
         <CardWrapper>
           {data.map((value) => (
-            <Cards key={value.id} info={value} />
+            <Cards
+              onClick={() => onSelect(value.id)}
+              key={value.id}
+              info={value}
+            />
           ))}
         </CardWrapper>
         <Button
