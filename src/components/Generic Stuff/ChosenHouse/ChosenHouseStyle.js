@@ -111,6 +111,9 @@ export const Headline = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  h1 {
+    margin-bottom: 0;
+  }
 `;
 export const ShareAndSave = styled.div`
   display: flex;
