@@ -55,6 +55,8 @@ const ChosenHouse = () => {
       },
     }
   );
+  var Address = [];
+  Address.push(data?.address, data?.city, data?.country);
   return (
     <Container>
       <Body>
@@ -69,10 +71,10 @@ const ChosenHouse = () => {
             <div>
               <img src={data?.attachments[0]?.imgPath || NoImage} alt="rasm" />
             </div>
-            <div>
+            <div className="none">
               <img src={data?.attachments[0]?.imgPath || NoImage} alt="rasm" />
             </div>
-            <div>
+            <div className="none">
               <img src={data?.attachments[0]?.imgPath || NoImage} alt="rasm" />
             </div>
           </SmallPics>
@@ -98,9 +100,7 @@ const ChosenHouse = () => {
                 </div>
               </ShareAndSave>
             </Headline>
-            <p className="subtitle start">
-              [{data?.address}, {data?.city}, {data?.country}]
-            </p>
+            <p className="subtitle start">{Address.join(", ")}</p>
           </MainText>
           <SendEmail ref={form} onSubmit={sendEmail}>
             <Details>
@@ -137,12 +137,6 @@ const ChosenHouse = () => {
               children="message"
               defaultValue="Hello, I am interested in [New Apartment]"
             />
-            {/* <div>
-              <input id="terms" type="checkbox" />
-              <label className="terms" htmlFor="terms">
-                By submitting this form I agree to Terms of Use
-              </label>
-            </div> */}
             <Button width="100%" type="primary" children="send request" />
           </SendEmail>
         </Main>

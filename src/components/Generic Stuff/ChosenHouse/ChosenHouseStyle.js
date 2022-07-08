@@ -13,10 +13,12 @@ export const Body = styled.div`
 export const Pictures = styled.div`
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   margin-bottom: 20px;
+  @media (max-width: 1000px) {
+    flex-wrap: wrap;
+  }
 `;
 export const MainPic = styled.div`
   max-width: 580px;
@@ -26,6 +28,12 @@ export const MainPic = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1000px) {
+    max-width: 100%;
+  }
+  @media (max-width: 776px) {
+    max-height: 200px;
+  }
   img {
     height: 100%;
     object-fit: cover;
@@ -36,8 +44,18 @@ export const SmallPics = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   gap: 20px;
-  flex-wrap: wrap;
-  > div {
+  width: 100%;
+  background-color: aqua;
+  @media (max-width: 1000px) {
+    display: flex;
+    justify-content: center;
+  }
+  .none {
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+  div {
     width: 100%;
     height: 190px;
     max-width: 280px;
@@ -45,17 +63,26 @@ export const SmallPics = styled.div`
     align-items: center;
     justify-content: center;
     overflow: hidden;
-
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
+    @media (max-width: 1000px) {
+      max-width: 50%;
     }
+    @media (max-width: 776px) {
+      max-height: 150px;
+    }
+    @media (max-width: 481px) {
+      max-height: 100px;
+    }
+  }
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 `;
 export const Main = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 `;
 export const MainText = styled.div`
   max-width: 880px;
@@ -65,8 +92,9 @@ export const MainText = styled.div`
   }
 `;
 export const SendEmail = styled.form`
-  width: 280px;
+  max-width: 280px;
   border: 1px solid #e6e9ec;
+  width: 100%;
   border-radius: 3px;
   padding: 24px;
   user-select: none;
@@ -129,5 +157,6 @@ export const OwnerContacts = styled.div`
   }
   p {
     text-align: start;
+    margin-bottom: 0;
   }
 `;
