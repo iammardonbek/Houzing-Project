@@ -4,17 +4,26 @@ import { InputWrapper } from "./InputWithLabelStyle";
 
 const InputWithLabel = forwardRef(
   (
-    { id, value, type, onChange, autoFocus, children, name, placeholder },
+    {
+      id,
+      defaultValue,
+      type,
+      onChange,
+      autoFocus,
+      children,
+      name,
+      placeholder,
+    },
     ref
   ) => {
     return (
       <InputWrapper className="searchformfld">
         <input
-          placeholder={placeholder}
           name={name}
+          placeholder={placeholder}
           id={id}
           type={type}
-          value={value}
+          defaultValue={defaultValue}
           onChange={onChange}
           autoFocus={autoFocus}
           ref={ref}
