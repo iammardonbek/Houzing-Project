@@ -6,9 +6,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  user-select: none;
+  padding: 0 20px;
 `;
 export const Top = styled.div`
-  padding: 48px 20px 24px;
+  padding: 48px 0px 24px;
   max-width: 1180px;
   width: 100%;
   display: grid;

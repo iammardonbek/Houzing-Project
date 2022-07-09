@@ -39,6 +39,8 @@ export const SearchBarContainer = styled.div`
   justify-content: center;
   display: flex;
   margin-top: 64px;
+  padding: 10px 20px;
+
   span {
     display: flex;
     border: 1px solid #e6e9ec;
@@ -54,7 +56,6 @@ export const SearchBarContainer = styled.div`
     justify-content: space-between;
     max-width: 1180px;
     width: 100%;
-    padding: 10px 20px;
     @media (max-width: 600px) {
       grid-template-columns: 1fr;
     }
