@@ -318,3 +318,48 @@ export const Furniture = styled.div`
     grid-template-columns: auto;
   }
 `;
+export const Tour = styled.div`
+  padding-bottom: 48px;
+  border-bottom: 1px solid #e6e9ec;
+  > div {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    @media (max-width: 776px) {
+      flex-wrap: wrap;
+    }
+  }
+  h3 {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(-headerColor);
+    margin: 48px 0 24px;
+    text-transform: capitalize;
+  }
+`;
+export const TourInfo = styled.div`
+  display: flex;
+  gap: 16px 36px;
+  @media (max-width: 520px) {
+    flex-direction: column;
+  }
+`;
+export const SelectWithLabel = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+
+  select {
+    outline: none;
+    padding: 4px 0;
+    border: none;
+    border-bottom: 1px solid #e6e9ec;
+    color: var(--headerColor);
+  }
+  label {
+    text-transform: capitalize;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+`;

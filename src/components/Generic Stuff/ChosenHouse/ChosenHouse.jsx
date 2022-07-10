@@ -53,6 +53,9 @@ import {
   Features,
   Furniture,
   IconBg,
+  Tour,
+  TourInfo,
+  SelectWithLabel,
 } from "./ChosenHouseStyle";
 import { useRef } from "react";
 import Footer from "../Footer/Footer";
@@ -424,6 +427,51 @@ const ChosenHouse = () => {
                   </div>
                 </Furniture>
               </Features>
+              <Tour>
+                <h2 className="heading">schedule a tour</h2>
+                <TourInfo>
+                  <SelectWithLabel className="select_label">
+                    <label htmlFor="date">date</label>
+                    <select id="date">
+                      <option>--Choose A Date--</option>
+                      <option>01.01.2022</option>
+                      <option>02.01.2022</option>
+                      <option>03.01.2022</option>
+                      <option>04.01.2022</option>
+                    </select>
+                  </SelectWithLabel>
+                  <SelectWithLabel className="select_label">
+                    <label htmlFor="time">time</label>
+                    <select id="time">
+                      <option>--Choose Time--</option>
+                      <option>11:00 am</option>
+                      <option>12:00 am</option>
+                      <option>01:00 pm</option>
+                    </select>
+                  </SelectWithLabel>
+                </TourInfo>
+                <h3>your information</h3>
+                <div>
+                  <InputWithLabel
+                    children="name"
+                    type="text"
+                    id="name"
+                    placeholder={" "}
+                  />
+                  <InputWithLabel
+                    children="phone"
+                    type="phone"
+                    id="phone"
+                    placeholder={" "}
+                  />
+                  <InputWithLabel
+                    children="email"
+                    type="email"
+                    id="email"
+                    placeholder={" "}
+                  />
+                </div>
+              </Tour>
             </MainText>
             <SendEmail ref={form} onSubmit={sendEmail}>
               <Details>
