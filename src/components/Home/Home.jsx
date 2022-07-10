@@ -16,7 +16,7 @@ export function Home() {
       <Slider />
       <Recommended />
       <WhyUs />
-      <Category />
+      {localStorage.getItem("token") && <Category />}
       <Farmhouse />
       <RecentProperties />
       <Testimonials />

@@ -1,16 +1,34 @@
 import React, { useState } from "react";
+// ---------Icons----------
+import { ReactComponent as Air } from "../../../Assets/air.svg";
+import { ReactComponent as Barbecue } from "../../../Assets/barbecue.svg";
+import { ReactComponent as Chair } from "../../../Assets/chair.svg";
+import { ReactComponent as Dryer } from "../../../Assets/dryer.svg";
+import { ReactComponent as Gym } from "../../../Assets/gym.svg";
+import { ReactComponent as Laundry } from "../../../Assets/laundry.svg";
+import { ReactComponent as Lawn } from "../../../Assets/lawn.svg";
+import { ReactComponent as Microwave } from "../../../Assets/microwave.svg";
+import { ReactComponent as Pool } from "../../../Assets/pool.svg";
+import { ReactComponent as Refrigerator } from "../../../Assets/refrigerator.svg";
+import { ReactComponent as Sauna } from "../../../Assets/sauna.svg";
+import { ReactComponent as Shower } from "../../../Assets/shower.svg";
+import { ReactComponent as TV } from "../../../Assets/tv.svg";
+import { ReactComponent as Washer } from "../../../Assets/washer.svg";
+import { ReactComponent as WIFI } from "../../../Assets/wifi.svg";
+import { ReactComponent as Window } from "../../../Assets/window.svg";
+
+import { ReactComponent as Share } from "../../../Assets/share.svg";
+import { ReactComponent as Year } from "../../../Assets/year.svg";
+import { ReactComponent as DownIcon } from "../../../Assets/download.svg";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import NoImage from "../../../Assets/Image_not_available.png";
 import NoPhoto from "../../../Assets/nophoto.png";
 import { Favorite } from "../PropertyCard/CardStyle";
-import { ReactComponent as Share } from "../../../Assets/share.svg";
 import InputWithLabel from "../InputWithLabel/InputWithLabel";
 import Button from "../Buttons/buttons";
 import emailjs from "@emailjs/browser";
 import { Baths, Beds, Cars, Fields } from "../../../style";
-import { ReactComponent as Year } from "../../../Assets/year.svg";
-import { ReactComponent as DownIcon } from "../../../Assets/download.svg";
 import {
   Body,
   Container,
@@ -30,6 +48,11 @@ import {
   Download,
   DocumentWrapper,
   Location,
+  PropertyDetails,
+  PropertyInfo,
+  Features,
+  Furniture,
+  IconBg,
 } from "./ChosenHouseStyle";
 import { useRef } from "react";
 import Footer from "../Footer/Footer";
@@ -109,15 +132,15 @@ const ChosenHouse = () => {
                 </h1>
                 <ShareAndSave>
                   <div>
-                    <span>
+                    <IconBg>
                       <Share />
-                    </span>
+                    </IconBg>
                     <p className="HouseSpecs">share</p>
                   </div>
                   <div>
-                    <span>
+                    <IconBg>
                       <Favorite />
-                    </span>
+                    </IconBg>
                     <p className="HouseSpecs">save</p>
                   </div>
                 </ShareAndSave>
@@ -241,6 +264,166 @@ const ChosenHouse = () => {
                 style={{ border: "0", margin: "25px 0px" }}
                 loading="lazy"
               ></iframe>
+              <PropertyDetails>
+                <h2 className="heading">Property Details</h2>
+                <PropertyInfo>
+                  <div>
+                    <h2 className="font14">property ID:</h2>
+                    <p className="HouseSpecs">{data?.id || "not given"}</p>
+                  </div>
+                  <div>
+                    <h2 className="font14">bedrooms:</h2>
+                    <p className="HouseSpecs">
+                      {data?.houseDetails?.room || "not given"}
+                    </p>
+                  </div>
+                  <div>
+                    <h2 className="font14">property type:</h2>
+                    <p className="HouseSpecs">
+                      {data?.category?.name || "apartment"}
+                    </p>
+                  </div>
+                  <div>
+                    <h2 className="font14">price:</h2>
+                    <p className="HouseSpecs">${data?.price || "100 000"}</p>
+                  </div>
+                  <div>
+                    <h2 className="font14">bathrooms:</h2>
+                    <p className="HouseSpecs">
+                      {data?.houseDetails?.bath || "1"}
+                    </p>
+                  </div>
+                  <div>
+                    <h2 className="font14">property status:</h2>
+                    <p className="HouseSpecs">
+                      {data?.status ? "for sale" : "sold"}
+                    </p>
+                  </div>
+                  <div>
+                    <h2 className="font14">property size:</h2>
+                    <p className="HouseSpecs">
+                      {data?.houseDetails?.area || "1200"} sq ft
+                    </p>
+                  </div>
+                  <div>
+                    <h2 className="font14">garage:</h2>
+                    <p className="HouseSpecs">
+                      {data?.houseDetails?.garage || "1"}
+                    </p>
+                  </div>
+                  <div>
+                    <h2 className="font14">year built:</h2>
+                    <p className="HouseSpecs">
+                      {data?.houseDetails?.yearBuilt || "2020-01-09"}
+                    </p>
+                  </div>
+                  <div>
+                    <h2 className="font14">garage size:</h2>
+                    <p className="HouseSpecs">200 sq ft</p>
+                  </div>
+                </PropertyInfo>
+              </PropertyDetails>
+              <Features>
+                <h2 className="heading">features</h2>
+                <Furniture>
+                  <div>
+                    <IconBg>
+                      <Air />
+                    </IconBg>
+                    <p className="HouseSpecs">air conditioning</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <Lawn />
+                    </IconBg>
+                    <p className="HouseSpecs">lawn</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <Refrigerator />
+                    </IconBg>
+                    <p className="HouseSpecs">refrigerator</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <Washer />
+                    </IconBg>
+                    <p className="HouseSpecs">washer</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <Barbecue />
+                    </IconBg>
+                    <p className="HouseSpecs">barbeque</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <Laundry />
+                    </IconBg>
+                    <p className="HouseSpecs">laundry</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <Sauna />
+                    </IconBg>
+                    <p className="HouseSpecs">sauna</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <WIFI />
+                    </IconBg>
+                    <p className="HouseSpecs">WIFI</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <Dryer />
+                    </IconBg>
+                    <p className="HouseSpecs">dryer</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <Microwave />
+                    </IconBg>
+                    <p className="HouseSpecs">microwave</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <Pool />
+                    </IconBg>
+                    <p className="HouseSpecs">swimming pool</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <Window />
+                    </IconBg>
+                    <p className="HouseSpecs">window coverings</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <Gym />
+                    </IconBg>
+                    <p className="HouseSpecs">gym</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <Shower />
+                    </IconBg>
+                    <p className="HouseSpecs">outdoor shower</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <TV />
+                    </IconBg>
+                    <p className="HouseSpecs">tv cable</p>
+                  </div>
+                  <div>
+                    <IconBg>
+                      <Chair />
+                    </IconBg>
+                    <p className="HouseSpecs">dining room</p>
+                  </div>
+                </Furniture>
+              </Features>
             </MainText>
             <SendEmail ref={form} onSubmit={sendEmail}>
               <Details>

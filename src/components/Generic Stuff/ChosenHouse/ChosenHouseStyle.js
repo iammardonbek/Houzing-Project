@@ -109,7 +109,7 @@ export const MainText = styled.div`
   .heading {
     font-size: 18px;
     color: var(--headerColor);
-    margin: 48px 0 16px;
+    margin: 48px 0 25px;
     text-transform: capitalize;
   }
 `;
@@ -165,15 +165,15 @@ export const ShareAndSave = styled.div`
       }
     }
   }
-  span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background-color: #f6f8f9;
-  }
+`;
+export const IconBg = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #f6f8f9;
 `;
 export const Details = styled.section`
   display: flex;
@@ -249,11 +249,10 @@ export const DocumentWrapper = styled.div`
   padding-bottom: 50px;
 `;
 export const Location = styled.div`
-  width: 100%;
   display: grid;
   grid-template-columns: auto auto auto;
   row-gap: 25px;
-  @media (max-width: 571px) {
+  @media (max-width: 776px) {
     grid-template-columns: auto auto;
   }
   @media (max-width: 571px) {
@@ -269,5 +268,53 @@ export const Location = styled.div`
       margin-bottom: 0;
       margin-right: 8px;
     }
+  }
+`;
+export const PropertyDetails = styled.div`
+  padding-bottom: 48px;
+  border-bottom: 1px solid #e6e9ec;
+  border-top: 1px solid #e6e9ec;
+`;
+export const PropertyInfo = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 25px;
+  @media (max-width: 776px) {
+    grid-template-columns: auto auto;
+  }
+  @media (max-width: 571px) {
+    grid-template-columns: auto;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    .font14 {
+      color: var(--headerColor);
+      text-transform: capitalize;
+      font-size: 14px;
+      margin-bottom: 0;
+      margin-right: 8px;
+    }
+  }
+`;
+export const Features = styled.div`
+  padding-bottom: 48px;
+  border-bottom: 1px solid #e6e9ec;
+`;
+export const Furniture = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  row-gap: 25px;
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  @media (max-width: 776px) {
+    grid-template-columns: auto auto;
+  }
+  @media (max-width: 450px) {
+    grid-template-columns: auto;
   }
 `;
