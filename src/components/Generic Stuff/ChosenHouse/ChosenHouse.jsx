@@ -20,9 +20,11 @@ import { ReactComponent as Window } from "../../../Assets/window.svg";
 import { ReactComponent as Share } from "../../../Assets/share.svg";
 import { ReactComponent as Year } from "../../../Assets/year.svg";
 import { ReactComponent as DownIcon } from "../../../Assets/download.svg";
+import { ReactComponent as Star } from "../../../Assets/star.svg";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import NoImage from "../../../Assets/Image_not_available.png";
+import User from "../../../Assets/user.png";
 import NoPhoto from "../../../Assets/nophoto.png";
 import { Favorite } from "../PropertyCard/CardStyle";
 import InputWithLabel from "../InputWithLabel/InputWithLabel";
@@ -58,6 +60,10 @@ import {
   SelectWithLabel,
   Review,
   Bars,
+  Opinions,
+  UserAvatar,
+  DateAdded,
+  Stars,
 } from "./ChosenHouseStyle";
 import { useRef } from "react";
 import Footer from "../Footer/Footer";
@@ -560,6 +566,58 @@ const ChosenHouse = () => {
                     </section>
                   </div>
                 </Bars>
+                <Opinions>
+                  <div>
+                    <UserAvatar>
+                      <img src={User} alt="rasm" />
+                    </UserAvatar>
+                    <h3>Jane Cooper</h3>
+                    <DateAdded>
+                      <p className="HouseSpecs">April 6, 2021 at 3:21 AM</p>
+                      <div>
+                        <Stars>
+                          <Star />
+                          <Star />
+                          <Star />
+                          <Star />
+                          <Star />
+                        </Stars>
+                        <p className="HouseSpecs">(5 reviews)</p>
+                      </div>
+                    </DateAdded>
+                    <p className="HouseSpecs">
+                      Every single thing we tried with John was delicious! Found
+                      some awesome places we would definitely go back to on our
+                      trip. John was also super friendly and passionate about
+                      Beşiktaş and Istanbul.{" "}
+                    </p>
+                  </div>
+                  <div>
+                    <UserAvatar>
+                      <img src={User} alt="rasm" />
+                    </UserAvatar>
+                    <h3>Jane Cooper</h3>
+                    <DateAdded>
+                      <p className="HouseSpecs">April 6, 2021 at 3:21 AM</p>
+                      <div>
+                        <Stars>
+                          <Star />
+                          <Star />
+                          <Star />
+                          <Star />
+                          <Star />
+                        </Stars>
+                        <p className="HouseSpecs">(5 reviews)</p>
+                      </div>
+                    </DateAdded>
+                    <p className="HouseSpecs">
+                      Every single thing we tried with John was delicious! Found
+                      some awesome places we would definitely go back to on our
+                      trip. John was also super friendly and passionate about
+                      Beşiktaş and Istanbul.{" "}
+                    </p>
+                  </div>
+                </Opinions>
               </Review>
             </MainText>
             <SendEmail ref={form} onSubmit={sendEmail}>

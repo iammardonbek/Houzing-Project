@@ -395,7 +395,7 @@ export const Bars = styled.div`
     align-items: center;
     width: 382px;
     @media (max-width: 450px) {
-      width: 320px;
+      width: 300px;
     }
     > p {
       width: 50%;
@@ -416,4 +416,62 @@ export const Bars = styled.div`
       }
     }
   }
+`;
+export const Opinions = styled.div`
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: auto auto;
+  row-gap: 26px;
+  margin-top: 27px;
+  @media (max-width: 1140px) {
+    grid-template-columns: auto;
+  }
+  @media (max-width: 1000px) {
+    grid-template-columns: auto auto;
+  }
+  @media (max-width: 850px) {
+    grid-template-columns: auto;
+  }
+  h3 {
+    color: var(--headerColor);
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  > div {
+    width: 382px;
+    @media (max-width: 450px) {
+      width: 300px;
+    }
+    > p {
+      margin-top: 20px;
+    }
+  }
+`;
+export const UserAvatar = styled.div`
+  height: 52px;
+  width: 52px;
+  align-self: start;
+  border-radius: 50%;
+  border: 2px solid white;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(13, 38, 59, 0.2);
+`;
+export const DateAdded = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+  @media (max-width: 450px) {
+    display: block;
+  }
+  > div {
+    display: flex;
+  }
+`;
+export const Stars = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60px;
+  margin-right: 8px;
 `;
