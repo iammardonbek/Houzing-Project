@@ -32,10 +32,10 @@ const ButtonType = ({ type }) => {
 export const Button = styled.button`
   ${({ type }) => ButtonType({ type })}
   width: ${({ width }) => (width ? width : "auto")};
-  margin-right: ${({ mr }) => (mr ? mr : "auto")};
-  margin-left: ${({ ml }) => (ml ? ml : "auto")};
-  margin-top: ${({ mt }) => (mt ? mt : "auto")};
-  margin-bottom: ${({ mb }) => (mb ? mb : "auto")};
+  margin-right: ${({ mr }) => (mr ? mr : "0")};
+  margin-left: ${({ ml }) => (ml ? ml : "0")};
+  margin-top: ${({ mt }) => (mt ? mt : "0")};
+  margin-bottom: ${({ mb }) => (mb ? mb : "0")};
   cursor: pointer;
   display: flex;
   align-items: center;

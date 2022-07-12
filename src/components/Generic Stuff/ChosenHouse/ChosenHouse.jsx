@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Progress } from "antd";
 // ---------Icons----------
 import { ReactComponent as Air } from "../../../Assets/air.svg";
 import { ReactComponent as Barbecue } from "../../../Assets/barbecue.svg";
@@ -16,7 +17,6 @@ import { ReactComponent as TV } from "../../../Assets/tv.svg";
 import { ReactComponent as Washer } from "../../../Assets/washer.svg";
 import { ReactComponent as WIFI } from "../../../Assets/wifi.svg";
 import { ReactComponent as Window } from "../../../Assets/window.svg";
-
 import { ReactComponent as Share } from "../../../Assets/share.svg";
 import { ReactComponent as Year } from "../../../Assets/year.svg";
 import { ReactComponent as DownIcon } from "../../../Assets/download.svg";
@@ -56,6 +56,8 @@ import {
   Tour,
   TourInfo,
   SelectWithLabel,
+  Review,
+  Bars,
 } from "./ChosenHouseStyle";
 import { useRef } from "react";
 import Footer from "../Footer/Footer";
@@ -471,7 +473,94 @@ const ChosenHouse = () => {
                     placeholder={" "}
                   />
                 </div>
+                <textarea
+                  rows={"3"}
+                  placeholder="Enter Your Message"
+                ></textarea>
+                <Button
+                  width={"250px"}
+                  mt="24px"
+                  children={"Submit a tour request"}
+                  type={"primary"}
+                />
               </Tour>
+              <Review>
+                <h2 className="heading">4.67 (14 reviews)</h2>
+                <Bars>
+                  <div>
+                    <p className="HouseSpecs">Cleanliness</p>
+                    <section>
+                      <Progress
+                        strokeWidth="5px"
+                        showInfo={false}
+                        format={(number) => number}
+                        percent={94}
+                      />
+                      <p>4.7</p>
+                    </section>
+                  </div>
+                  <div>
+                    <p className="HouseSpecs">accuracy</p>
+                    <section>
+                      <Progress
+                        strokeWidth="5px"
+                        showInfo={false}
+                        format={(number) => number}
+                        percent={94}
+                      />
+                      <p>4.7</p>
+                    </section>
+                  </div>
+                  <div>
+                    <p className="HouseSpecs">Communication</p>
+                    <section>
+                      <Progress
+                        strokeWidth="5px"
+                        showInfo={false}
+                        format={(number) => number}
+                        percent={98}
+                      />
+                      <p>4.9</p>
+                    </section>
+                  </div>
+                  <div>
+                    <p className="HouseSpecs">location</p>
+                    <section>
+                      <Progress
+                        strokeWidth="5px"
+                        showInfo={false}
+                        format={(number) => number}
+                        percent={98}
+                      />
+                      <p>4.9</p>
+                    </section>
+                  </div>
+                  <div>
+                    <p className="HouseSpecs">check-in</p>
+                    <section>
+                      <Progress
+                        strokeWidth="5px"
+                        showInfo={false}
+                        format={(number) => number}
+                        percent={98}
+                      />
+                      <p>4.9</p>
+                    </section>
+                  </div>
+                  <div>
+                    <p className="HouseSpecs">value</p>
+                    <section>
+                      <Progress
+                        strokeWidth="5px"
+                        showInfo={false}
+                        format={(number) => number}
+                        percent={98}
+                      />
+                      <p>4.9</p>
+                    </section>
+                  </div>
+                </Bars>
+              </Review>
             </MainText>
             <SendEmail ref={form} onSubmit={sendEmail}>
               <Details>

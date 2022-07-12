@@ -321,10 +321,19 @@ export const Furniture = styled.div`
 export const Tour = styled.div`
   padding-bottom: 48px;
   border-bottom: 1px solid #e6e9ec;
+  textarea {
+    width: 100%;
+    margin-top: 24px;
+    border: none;
+    border-bottom: 1px solid #e6e9ec;
+    outline: none;
+    color: #696969;
+  }
   > div {
     display: flex;
     gap: 20px;
     justify-content: space-between;
+    justify-content: center;
     @media (max-width: 776px) {
       flex-wrap: wrap;
     }
@@ -361,5 +370,50 @@ export const SelectWithLabel = styled.div`
     text-transform: capitalize;
     font-weight: 600;
     margin-bottom: 8px;
+  }
+`;
+export const Review = styled.div`
+  padding-bottom: 48px;
+  border-bottom: 1px solid #e6e9ec;
+`;
+export const Bars = styled.div`
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: auto auto;
+  row-gap: 23px;
+  @media (max-width: 1140px) {
+    grid-template-columns: auto;
+  }
+  @media (max-width: 1000px) {
+    grid-template-columns: auto auto;
+  }
+  @media (max-width: 850px) {
+    grid-template-columns: auto;
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    width: 382px;
+    @media (max-width: 450px) {
+      width: 320px;
+    }
+    > p {
+      width: 50%;
+    }
+    > section {
+      display: flex;
+      align-items: center;
+      p {
+        margin-bottom: 0;
+        margin-left: 17px;
+      }
+    }
+    section :nth-child(1) {
+      width: 140px;
+      height: fit-content;
+      @media (max-width: 450px) {
+        width: 100px;
+      }
+    }
   }
 `;

@@ -45,7 +45,10 @@ export const Navbar = () => {
                     onClick={() => setUserLogo(!userLogo)}
                     className="userLogo"
                   />
-                  <Dropdown style={{ display: userLogo ? "block" : "none" }}>
+                  <Dropdown
+                    onClick={() => setUserLogo(false)}
+                    style={{ display: userLogo ? "block" : "none" }}
+                  >
                     <Link to="Login">Log in</Link>
                   </Dropdown>
                 </div>
@@ -59,7 +62,10 @@ export const Navbar = () => {
               />
               <Dropdown style={{ display: userLogo ? "block" : "none" }}>
                 <Link
-                  onClick={() => localStorage.removeItem("token")}
+                  onClick={() => {
+                    localStorage.removeItem("token");
+                    setUserLogo(false);
+                  }}
                   to="Login"
                 >
                   Log out

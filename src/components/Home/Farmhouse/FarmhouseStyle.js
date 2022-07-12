@@ -16,6 +16,9 @@ export const Container = styled.div`
 `;
 export const HouseInfo = styled.div`
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
