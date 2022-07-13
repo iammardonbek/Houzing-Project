@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Carousel from "react-elastic-carousel";
+import Cards from "../PropertyCard/Cards";
+
 import { Progress } from "antd";
 // ---------Icons----------
 import { ReactComponent as Air } from "../../../Assets/air.svg";
@@ -64,6 +67,8 @@ import {
   UserAvatar,
   DateAdded,
   Stars,
+  LeaveReview,
+  SimilarListings,
 } from "./ChosenHouseStyle";
 import { useRef } from "react";
 import Footer from "../Footer/Footer";
@@ -71,6 +76,7 @@ import Footer from "../Footer/Footer";
 const { REACT_APP_BASE_LINK: url } = process.env;
 const ChosenHouse = () => {
   const form = useRef();
+  const reviewForm = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -81,9 +87,24 @@ const ChosenHouse = () => {
       "nTtuO1V8uuOTwlRK2"
     );
   };
+  const sendReview = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_rqpg6xm",
+      "template_38tzet9",
+      reviewForm.current,
+      "nTtuO1V8uuOTwlRK2"
+    );
+  };
   const { id } = useParams();
   const [data, setData] = useState();
-
+  const breakPoints = [
+    { width: 1, itemsToShow: 1, navigation: false },
+    { width: 680, itemsToShow: 2 },
+    { width: 950, itemsToShow: 3 },
+    { width: 1180, itemsToShow: 3, navigation: false },
+  ];
   useQuery(
     [],
     () => {
@@ -479,10 +500,7 @@ const ChosenHouse = () => {
                     placeholder={" "}
                   />
                 </div>
-                <textarea
-                  rows={"3"}
-                  placeholder="Enter Your Message"
-                ></textarea>
+                <textarea rows={"3"} placeholder="Enter Your Message" />
                 <Button
                   width={"250px"}
                   mt="24px"
@@ -619,6 +637,98 @@ const ChosenHouse = () => {
                   </div>
                 </Opinions>
               </Review>
+              <LeaveReview>
+                <h2 className="heading">Write a Review</h2>
+                <section>
+                  <div>
+                    <p className="HouseSpecs">Cleanliness</p>
+                    <Stars>
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                    </Stars>
+                  </div>
+                  <div>
+                    <p className="HouseSpecs">Accuracy</p>
+                    <Stars>
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                    </Stars>
+                  </div>
+                  <div>
+                    <p className="HouseSpecs">Communication</p>
+                    <Stars>
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                    </Stars>
+                  </div>
+                  <div>
+                    <p className="HouseSpecs">location</p>
+                    <Stars>
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                    </Stars>
+                  </div>
+                  <div>
+                    <p className="HouseSpecs">check-in</p>
+                    <Stars>
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                    </Stars>
+                  </div>
+                  <div>
+                    <p className="HouseSpecs">value</p>
+                    <Stars>
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                    </Stars>
+                  </div>
+                </section>
+                <form ref={reviewForm} onSubmit={sendReview}>
+                  <InputWithLabel
+                    children="name"
+                    type="text"
+                    id="name"
+                    placeholder={" "}
+                    name="reviewerName"
+                  />
+                  <InputWithLabel
+                    children="email"
+                    type="email"
+                    name="user_email"
+                    id="email"
+                    placeholder={" "}
+                  />
+                  <textarea
+                    name="review"
+                    rows={"3"}
+                    placeholder="Enter Your Message"
+                  />
+                  <Button
+                    width={"250px"}
+                    mt="24px"
+                    children={"send your review"}
+                    type={"primary"}
+                  />
+                </form>
+              </LeaveReview>
             </MainText>
             <SendEmail ref={form} onSubmit={sendEmail}>
               <Details>
@@ -658,6 +768,30 @@ const ChosenHouse = () => {
               <Button width="100%" type="primary" children="send request" />
             </SendEmail>
           </Main>
+          <SimilarListings>
+            <h1 className="title">similar listings</h1>
+            <p className="subtitle">
+              Nulla quis curabitur velit volutpat auctor bibendum consectetur
+              sit.
+            </p>
+            <div>
+              <Carousel
+                itemsToShow={3}
+                itemsToScroll={1}
+                breakPoints={breakPoints}
+                itemPadding={[10, 10]}
+                enableAutoPlay
+                autoPlaySpeed={2500}
+              >
+                <Cards />
+                <Cards />
+                <Cards />
+                <Cards />
+                <Cards />
+                <Cards />
+              </Carousel>
+            </div>
+          </SimilarListings>
         </Body>
       </Container>
       <Footer />

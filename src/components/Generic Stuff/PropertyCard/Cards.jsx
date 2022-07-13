@@ -33,26 +33,32 @@ const Cards = ({ info, onClick }) => {
         <HouseSpecs>
           <span>
             <Beds fill="#696969" />
-            <p className="HouseSpecs">{info?.houseDetails?.room} beds</p>
+            <p className="HouseSpecs">{info?.houseDetails?.room || "1"} beds</p>
           </span>
           <span>
             <Baths fill="#696969" />
-            <p className="HouseSpecs">{info?.houseDetails?.bath} baths</p>
+            <p className="HouseSpecs">
+              {info?.houseDetails?.bath || "1"} baths
+            </p>
           </span>
           <span>
             <Cars fill="#696969" />
-            <p className="HouseSpecs">{info?.houseDetails?.garage} garage</p>
+            <p className="HouseSpecs">
+              {info?.houseDetails?.garage || "1"} garage
+            </p>
           </span>
           <span>
             <Fields fill="#696969" />
-            <p className="HouseSpecs">{info?.houseDetails?.area} sq ft</p>
+            <p className="HouseSpecs">
+              {info?.houseDetails?.area || "1000"} sq ft
+            </p>
           </span>
         </HouseSpecs>
       </BottomCard>
       <CardFooter>
         <div>
-          <p className="discount">${info?.salePrice}/month</p>
-          <h2 className="cardTitle">${info?.price}/month</h2>
+          <p className="discount">${info?.salePrice || "0"}/month</p>
+          <h2 className="cardTitle">${info?.price || "0"}/month</h2>
         </div>
         <div>
           <span>

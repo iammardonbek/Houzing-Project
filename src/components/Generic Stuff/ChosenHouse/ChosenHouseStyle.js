@@ -475,3 +475,49 @@ export const Stars = styled.div`
   width: 60px;
   margin-right: 8px;
 `;
+export const LeaveReview = styled.div`
+  padding-bottom: 48px;
+  border-bottom: 1px solid #e6e9ec;
+  section {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: auto auto;
+    row-gap: 24px;
+    margin-top: 34px;
+    @media (max-width: 550px) {
+      grid-template-columns: 100%;
+    }
+    > div {
+      display: flex;
+      align-items: center;
+      width: 382px;
+      @media (max-width: 680px) {
+        width: 300px;
+      }
+      @media (max-width: 550px) {
+        width: 100%;
+        justify-content: space-between;
+      }
+      p {
+        width: 50%;
+      }
+    }
+  }
+  textarea {
+    width: 100%;
+    margin-top: 24px;
+    border: none;
+    border-bottom: 1px solid #e6e9ec;
+    outline: none;
+    color: #696969;
+  }
+`;
+export const SimilarListings = styled.div`
+  text-align: center;
+  padding: 96px 0px 0px;
+  > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+`;
