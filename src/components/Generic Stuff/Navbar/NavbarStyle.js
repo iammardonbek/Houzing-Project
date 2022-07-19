@@ -81,12 +81,13 @@ export const Nav = styled.nav`
 `;
 export const Dropdown = styled.div`
   width: 200px;
-  padding: 20px;
+  padding: 15px;
   background-color: var(--headerColor);
   position: absolute;
   box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
   top: 44px;
   right: 0px;
+  gap: 15px;
   a {
     color: white;
   }

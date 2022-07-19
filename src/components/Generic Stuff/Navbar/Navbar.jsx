@@ -11,6 +11,10 @@ export const Navbar = () => {
   const location = useLocation();
   const [mobileMenu, setMobileMenu] = useState(false);
   const [userLogo, setUserLogo] = useState(false);
+  const HandleDropDown = () => {
+    setUserLogo(!userLogo);
+    setMobileMenu(false);
+  };
   return (
     <>
       <Header>
@@ -41,12 +45,9 @@ export const Navbar = () => {
                   <Button width="120px" children="Login" />
                 </Link>
                 <div className="dropdown dropdown_login">
-                  <Login
-                    onClick={() => setUserLogo(!userLogo)}
-                    className="userLogo"
-                  />
+                  <Login onClick={HandleDropDown} className="userLogo" />
                   <Dropdown
-                    onClick={() => setUserLogo(false)}
+                    onClick={HandleDropDown}
                     style={{ display: userLogo ? "block" : "none" }}
                   >
                     <Link to="Login">Log in</Link>
@@ -56,20 +57,24 @@ export const Navbar = () => {
             )
           ) : (
             <div className="dropdown">
-              <Login
-                onClick={() => setUserLogo(!userLogo)}
-                className="userLogo"
-              />
+              <Login onClick={HandleDropDown} className="userLogo" />
               <Dropdown style={{ display: userLogo ? "block" : "none" }}>
-                <Link
-                  onClick={() => {
-                    localStorage.removeItem("token");
-                    setUserLogo(false);
-                  }}
-                  to="Login"
-                >
-                  Log out
-                </Link>
+                <div>
+                  <Link onClick={HandleDropDown} to="Favorite">
+                    Favorites
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                    onClick={() => {
+                      localStorage.removeItem("token");
+                      HandleDropDown();
+                    }}
+                    to="Login"
+                  >
+                    Log out
+                  </Link>
+                </div>
               </Dropdown>
             </div>
           )}

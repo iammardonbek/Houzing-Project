@@ -9,6 +9,7 @@ import { ReactComponent as Arrow } from "./Assets/arrowRight.svg";
 export const HouseSpecs = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   span {
     text-align: center;
   }

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div``;
 export const Body = styled.div`
-  padding: 0 20px;
+  padding: 0 20px 96px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +37,6 @@ export const CardWrapper = styled.div`
   display: flex;
   grid-template-columns: auto auto auto;
   flex-wrap: wrap;
-  /* justify-content: center; */
   gap: 20px;
   max-width: 1180px;
 `;

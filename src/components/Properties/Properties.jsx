@@ -64,13 +64,7 @@ const Properties = () => {
             />
           ))}
         </CardWrapper>
-        <Button
-          mb="96px"
-          mt="48px"
-          children="show more"
-          type="primary"
-          width="250px"
-        />
+        <Button mt="48px" children="show more" type="primary" width="250px" />
       </Body>
       <Footer />
     </Container>
