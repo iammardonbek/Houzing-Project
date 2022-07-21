@@ -18,7 +18,7 @@ export const NavbarDetails = [
   {
     id: "3",
     title: "contact us",
-    path: "/Contacts",
+    path: "/Contact",
     element: <Contacts />,
   },
 ];

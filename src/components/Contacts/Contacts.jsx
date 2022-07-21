@@ -25,7 +25,7 @@ const Contacts = () => {
     <Container>
       <Body>
         <Title>
-          <h1 className="title">contacts</h1>
+          <h1 className="title">contact us</h1>
           <p className="subtitle">
             - Have question and need to talk to us? Please complete this form
             and we will get in touch as soon as possible.

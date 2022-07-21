@@ -73,7 +73,7 @@ const Footer = () => {
           <h2>about us</h2>
           <p>terms & condition</p>
           <p>support center</p>
-          <p onClick={() => navigate("/contacts")}>contact us</p>
+          <p onClick={() => navigate("/contact")}>contact us</p>
         </FooterColumns>
       </Top>
       <Bottom>

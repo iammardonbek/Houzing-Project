@@ -74,7 +74,11 @@ export const ForSale = styled.span`
   color: white;
 `;
 export const FullScreen = styled(fullscreen)``;
-export const Favorite = styled(favorite)``;
+export const Favorite = styled(favorite)`
+  path {
+    fill: #696969;
+  }
+`;
 export const Owner = styled.div`
   width: 42px;
   height: 42px;
