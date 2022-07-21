@@ -1,3 +1,4 @@
+import Contacts from "../components/Contacts/Contacts";
 import { Home } from "../components/Home/Home";
 import Properties from "../components/Properties/Properties";
 
@@ -16,8 +17,8 @@ export const NavbarDetails = [
   },
   {
     id: "3",
-    title: "contacts",
+    title: "contact us",
     path: "/Contacts",
-    element: <Home />,
+    element: <Contacts />,
   },
 ];

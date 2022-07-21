@@ -88,7 +88,7 @@ export const Main = styled.div`
   }
 `;
 export const MainText = styled.div`
-  max-width: 880px;
+  /* max-width: 880px; */
   width: 100%;
   iframe {
     width: 100%;
@@ -125,7 +125,7 @@ export const SendEmail = styled.form`
   user-select: none;
   display: flex;
   flex-direction: column;
-  @media (max-width: 1000px) {
+  @media (max-width: 1080px) {
     display: none;
   }
   > div {
@@ -202,13 +202,14 @@ export const OwnerContacts = styled.div`
 `;
 export const HouseSpecs = styled.div`
   display: flex;
-  column-gap: 25px;
+  column-gap: 20px;
   row-gap: 15px;
   flex-wrap: wrap;
   margin-top: 32px;
   span {
     display: flex;
     gap: 8px;
+    align-items: center;
   }
 `;
 export const SecondHeadline = styled.div`
@@ -383,9 +384,11 @@ export const Bars = styled.div`
   row-gap: 23px;
   @media (max-width: 1140px) {
     grid-template-columns: auto;
+    justify-content: center;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 1080px) {
     grid-template-columns: auto auto;
+    justify-content: space-between;
   }
   @media (max-width: 850px) {
     grid-template-columns: auto;
@@ -425,9 +428,11 @@ export const Opinions = styled.div`
   margin-top: 27px;
   @media (max-width: 1140px) {
     grid-template-columns: auto;
+    justify-content: center;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 1080px) {
     grid-template-columns: auto auto;
+    justify-content: space-between;
   }
   @media (max-width: 850px) {
     grid-template-columns: auto;

@@ -17,8 +17,10 @@ import { ReactComponent as Twitter } from "../../../Assets/Twitter.svg";
 import { ReactComponent as Linked } from "../../../Assets/Linked.svg";
 import { LogoLink } from "../Navbar/NavbarStyle";
 import Logo from "../../../Assets/logo.svg";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <Top>
@@ -71,7 +73,7 @@ const Footer = () => {
           <h2>about us</h2>
           <p>terms & condition</p>
           <p>support center</p>
-          <p>contact us</p>
+          <p onClick={() => navigate("/contacts")}>contact us</p>
         </FooterColumns>
       </Top>
       <Bottom>

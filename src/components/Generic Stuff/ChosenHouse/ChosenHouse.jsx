@@ -115,7 +115,6 @@ const ChosenHouse = () => {
     {
       onSuccess: (res) => {
         setData(res.data);
-        console.log(data);
       },
     }
   );
@@ -177,13 +176,18 @@ const ChosenHouse = () => {
                   </div>
                 </ShareAndSave>
               </Headline>
-              <p className="subtitle start">{Address.join(", ")}</p>
+              <p className="subtitle start">
+                {Address.filter((value) => value !== "").join(", ")}
+              </p>
               <SecondHeadline>
                 <HouseSpecs>
                   <span>
                     <Beds fill="#696969" />
                     <p className="HouseSpecs">
-                      {data?.houseDetails?.room} beds
+                      {data?.houseDetails?.room === 0
+                        ? "2"
+                        : data?.houseDetails?.room}{" "}
+                      beds
                     </p>
                   </span>
                   <span>

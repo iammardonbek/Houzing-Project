@@ -4,15 +4,19 @@ import App from "./App";
 import "./index.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { LikeContextProvider } from "./components/Hooks/context";
 const queryClient = new QueryClient();
+
 var root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <Router>
-        <App />
-      </Router>
+      <LikeContextProvider>
+        <Router>
+          <App />
+        </Router>
+      </LikeContextProvider>
     </QueryClientProvider>
   </React.StrictMode>
 );

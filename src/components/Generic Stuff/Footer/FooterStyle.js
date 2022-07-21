@@ -39,6 +39,7 @@ export const FooterColumns = styled.div`
     color: white;
     text-transform: capitalize;
     max-width: 250px;
+    cursor: pointer;
   }
   div {
     display: flex;

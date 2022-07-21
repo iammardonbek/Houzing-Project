@@ -13,7 +13,7 @@ import Cards from "../Generic Stuff/PropertyCard/Cards";
 import { Button } from "../Generic Stuff/Buttons/buttonStyle";
 import { useState } from "react";
 import Footer from "../Generic Stuff/Footer/Footer";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const { REACT_APP_BASE_LINK: url } = process.env;
 
