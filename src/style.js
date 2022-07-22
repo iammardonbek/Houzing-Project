@@ -15,6 +15,14 @@ export const HouseSpecs = styled.div`
   }
 `;
 
+export const Fallback = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+`;
+
 export const Cars = styled(Car)`
   path {
     fill: ${({ fill }) => (fill ? fill : "white")};

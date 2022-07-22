@@ -37,7 +37,6 @@ h1 {
   font-size: 16px;
   color: var(--secondaryColor);
   text-align: center;
-  max-width: 640px;
 }
 .cardTitle {
   font-weight: 600;
