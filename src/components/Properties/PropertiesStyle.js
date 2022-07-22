@@ -34,9 +34,14 @@ export const Sort = styled.div`
   border-bottom: 1px solid #e6e9ec;
 `;
 export const CardWrapper = styled.div`
-  display: flex;
+  display: grid;
   grid-template-columns: auto auto auto;
-  flex-wrap: wrap;
   gap: 20px;
   max-width: 1180px;
+  @media (max-width: 1080px) {
+    grid-template-columns: auto auto;
+  }
+  @media (max-width: 700px) {
+    grid-template-columns: auto;
+  }
 `;

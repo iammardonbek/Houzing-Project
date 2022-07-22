@@ -3,8 +3,9 @@ import { ReactComponent as fullscreen } from "../../../Assets/fullscreen.svg";
 import { ReactComponent as favorite } from "../../../Assets/favorite.svg";
 
 export const CardWrapper = styled.div`
-  max-width: ${({ width }) => (width ? width : "380px")};
+  max-width: ${({ width }) => (width ? width : `380px`)};
   min-width: 320px;
+  width: 100%;
   text-align: start;
   border: 1px solid #e6e9ec;
   :hover {
