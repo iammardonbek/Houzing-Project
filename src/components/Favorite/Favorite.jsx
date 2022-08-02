@@ -20,6 +20,7 @@ const Favorite = () => {
           <Cards />
           <Cards />
           <Cards />
+          <Cards />
         </CardWrapper>
       </Body>
       <Footer />

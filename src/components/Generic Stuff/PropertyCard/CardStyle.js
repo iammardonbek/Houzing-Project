@@ -11,6 +11,7 @@ export const CardWrapper = styled.div`
   :hover {
     box-shadow: 2px 3px 5px 3px rgba(0, 0, 0, 0.1);
   }
+  user-select: none;
 `;
 export const TopCard = styled.div`
   position: relative;

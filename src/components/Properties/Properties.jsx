@@ -22,8 +22,9 @@ const Properties = () => {
 
   const { search } = useLocation();
   const [data, setData] = useState([]);
+  const [cardsMaxLength, setCardsMaxLength] = useState(9);
   useQuery(
-    "",
+    ["get started", search],
     () => {
       return fetch(`${url}v1/houses/list${search}`).then((res) => res.json());
     },
@@ -35,6 +36,9 @@ const Properties = () => {
   );
   const onSelect = (id) => {
     navigate(`/properties/:${id}`);
+  };
+  const showMore = () => {
+    setCardsMaxLength(cardsMaxLength + 3);
   };
   return (
     <Container>
@@ -56,15 +60,24 @@ const Properties = () => {
           </Sort>
         </SortingPart>
         <CardWrapper>
-          {data.map((value) => (
+          {data.slice(0, cardsMaxLength).map((value) => (
             <Cards
               onClick={() => onSelect(value.id)}
               key={value.id}
               info={value}
+              favorite={data.favorite}
             />
           ))}
         </CardWrapper>
-        <Button mt="48px" children="show more" type="primary" width="250px" />
+        {data?.length > cardsMaxLength ? (
+          <Button
+            onClick={showMore}
+            mt="48px"
+            children="show more"
+            type="primary"
+            width="250px"
+          />
+        ) : null}
       </Body>
       <Footer />
     </Container>

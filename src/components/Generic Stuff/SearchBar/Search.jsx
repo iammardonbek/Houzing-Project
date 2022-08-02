@@ -19,12 +19,11 @@ export const Search = () => {
     const { value, name } = target;
     navigate(`${UseReplace(value, name)}`);
   };
-  const [visible, setVisible] = useState(false);
 
+  const [visible, setVisible] = useState(false);
   const hide = () => {
     setVisible(false);
   };
-
   const handleVisibleChange = (newVisible) => {
     setVisible(newVisible);
   };

@@ -1,12 +1,12 @@
 import React, { createContext, useState } from "react";
 
-export const LikeContext = createContext();
+export const FavoriteContext = createContext();
 
-export const LikeContextProvider = ({ children }) => {
-  const [like, setLike] = useState(false);
+export const FavoriteContextProvider = ({ children }) => {
+  const [favorite, setFavorite] = useState([]);
   return (
-    <LikeContext.Provider value={[like, setLike]}>
+    <FavoriteContext.Provider value={[favorite, setFavorite]}>
       {children}
-    </LikeContext.Provider>
+    </FavoriteContext.Provider>
   );
 };

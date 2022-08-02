@@ -26,7 +26,7 @@ const BackToTop = () => {
           style={{
             position: "fixed",
             bottom: "10px",
-            right: "10px",
+            right: "20px",
             zIndex: "1000",
           }}
           className="BackToTop"

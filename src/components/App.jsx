@@ -1,12 +1,12 @@
 import React from "react";
-import { Navbar } from "./components/Generic Stuff/Navbar/Navbar";
-import { NavbarDetails } from "./utils/Details";
+import { Navbar } from "./Generic Stuff/Navbar/Navbar";
+import { NavbarDetails } from "../utils/Details";
 import { Route, Routes } from "react-router-dom";
-import SignIn from "./components/SignIn/SignIn";
-import Register from "./components/Register/Register";
-import ScrollToTop from "./components/Generic Stuff/ScrollToTop/ScrollToTop";
-import ChosenHouse from "./components/Generic Stuff/ChosenHouse/ChosenHouse";
-import Favorite from "./components/Favorite/Favorite";
+import SignIn from "./SignIn/SignIn";
+import Register from "./Register/Register";
+import ScrollToTop from "./Generic Stuff/ScrollToTop/ScrollToTop";
+import ChosenHouse from "./Generic Stuff/ChosenHouse/ChosenHouse";
+import Favorite from "./Favorite/Favorite";
 
 export default function App() {
   return (

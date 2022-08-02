@@ -16,9 +16,9 @@ import {
 import { useEffect } from "react";
 import { useState } from "react";
 
-const Cards = ({ info, onClick }) => {
+const Cards = ({ info, onClick, fav }) => {
   const [loading, setLoading] = useState(false);
-
+  const [favorited, setFavorited] = useState(fav ? true : false);
   useEffect(() => {
     setLoading(true);
     const timing = setTimeout(() => {
@@ -38,8 +38,8 @@ const Cards = ({ info, onClick }) => {
           </BottomCard>
         </CardWrapper>
       ) : (
-        <CardWrapper onClick={onClick}>
-          <TopCard>
+        <CardWrapper>
+          <TopCard onClick={onClick}>
             <img
               src={info?.attachments[0]?.imgPath || NotAvailable}
               alt="rasm"
@@ -47,7 +47,7 @@ const Cards = ({ info, onClick }) => {
             <Featured>featured</Featured>
             <ForSale>for sale</ForSale>
           </TopCard>
-          <BottomCard>
+          <BottomCard onClick={onClick}>
             <Owner>
               <img src={info?.img || NoPhoto} alt="rasm" />
             </Owner>
@@ -93,7 +93,10 @@ const Cards = ({ info, onClick }) => {
               <span>
                 <FullScreen />
               </span>
-              <span>
+              <span
+                onClick={() => setFavorited(!favorited)}
+                style={{ background: favorited ? "red" : "white" }}
+              >
                 <Favorite />
               </span>
             </div>
