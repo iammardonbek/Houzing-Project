@@ -3,8 +3,12 @@ import Cards from "../Generic Stuff/PropertyCard/Cards";
 import { CardWrapper, Title, Body } from "../Properties/PropertiesStyle";
 import { Container } from "./StyleFavorite";
 import Footer from "../Generic Stuff/Footer/Footer";
+import { FavoriteContext } from "../Hooks/context";
+import { useContext } from "react";
 
 const Favorite = () => {
+  const [liked] = useContext(FavoriteContext);
+
   return (
     <Container>
       <Body>
@@ -15,12 +19,9 @@ const Favorite = () => {
           </p>
         </Title>
         <CardWrapper>
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
+          {liked.map((info) => (
+            <Cards red="red" key={info.id} info={info} />
+          ))}
         </CardWrapper>
       </Body>
       <Footer />

@@ -133,6 +133,9 @@ h1 {
 .nav-menu-active {
   left: 0;
 }
+.dropdown_login {
+  display: none;
+}
 @media only screen and (max-width: 776px) {
   .hamburger {
     display: block;
@@ -150,6 +153,9 @@ h1 {
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+  .dropdown_login {
+    display: block;
+  }
 }
 /* userlogo */
 .dropdown {
@@ -157,10 +163,4 @@ h1 {
 }
 .userLogo {
   cursor: pointer;
-}
-.dropdown_login {
-  display: none;
-}
-.dropdown_login {
-  display: block;
 }

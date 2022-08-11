@@ -42,6 +42,9 @@ export const CardFooter = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  .red {
+    background-color: ${({ red }) => (red ? red : "#696969")};
+  }
   div {
     span:nth-child(2) {
       background-color: #f6f8f9;

@@ -15,10 +15,23 @@ import {
 } from "./CardStyle";
 import { useEffect } from "react";
 import { useState } from "react";
+import { FavoriteContext } from "../../Hooks/context";
+import { useContext } from "react";
 
-const Cards = ({ info, onClick, fav }) => {
+const Cards = ({ info, onClick, fav, red }) => {
   const [loading, setLoading] = useState(false);
   const [favorited, setFavorited] = useState(fav ? true : false);
+  const [liked, setLiked] = useContext(FavoriteContext);
+  const addToFavorites = (info) => {
+    if (!liked.map((value) => value.id === info.id) || liked.length === 0) {
+      setLiked((value) => [...value, info]);
+      setFavorited(true);
+    } else {
+      setLiked((liked) => liked.filter((value) => value.id !== info.id));
+      setFavorited(false);
+    }
+    console.log(liked);
+  };
   useEffect(() => {
     setLoading(true);
     const timing = setTimeout(() => {
@@ -94,10 +107,12 @@ const Cards = ({ info, onClick, fav }) => {
                 <FullScreen />
               </span>
               <span
-                onClick={() => setFavorited(!favorited)}
-                style={{ background: favorited ? "red" : "white" }}
+                className="red"
+                red={red}
+                onClick={() => addToFavorites(info)}
+                style={{ background: favorited ? "red" : " #F6F8F9" }}
               >
-                <Favorite />
+                <Favorite fav />
               </span>
             </div>
           </CardFooter>
